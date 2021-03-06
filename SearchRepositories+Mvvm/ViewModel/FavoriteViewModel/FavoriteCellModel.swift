@@ -19,7 +19,7 @@ final class FavoriteCellModel {
     }
     
     var description: String {
-        return item.description
+        return item.descrip
     }
     
     var subDescription: String {

@@ -8,15 +8,19 @@
 import UIKit
 import RealmSwift
 import SafariServices
+import DropDown
 
 class FavoriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBarFavo: UITextField!
+    @IBOutlet weak var menuBarButton: UIButton!
     
     var viewModel = FavoriteViewModel()
     var items: [Favorite] = []
     var searchItem: [Favorite] = []
+    let rightBarDropDown = DropDown()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +44,25 @@ class FavoriteViewController: UIViewController {
         }
     }
     
+    func getDataAZ(){
+        items.removeAll()
+        viewModel.sortItemAZ()
+        viewModel.items.bind {[weak self] (favorite) in
+            self?.items = favorite
+            self?.tableView.reloadData()
+        }
+    }
+    
+    func getDataZA(){
+        items.removeAll()
+        viewModel.sortItemZA()
+        viewModel.items.bind {[weak self] (favorite) in
+            self?.items = favorite
+            self?.tableView.reloadData()
+        }
+    }
+    
+    
     @objc func getSearchData() {
         viewModel.searchItem(text: searchBarFavo.text ?? "")
         print(searchBarFavo.text)
@@ -55,8 +78,31 @@ class FavoriteViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBarFavo.delegate = self
-        
+        setUpMenu()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteAllItem))
+    }
+    
+    func setUpMenu() {
+        rightBarDropDown.anchorView = menuBarButton
+        rightBarDropDown.dataSource = ["Name (A -> Z)", "Name (Z -> A)"]
+        rightBarDropDown.cellConfiguration = { (index, item) in return "\(item)" }
+    }
+    @IBAction func menuBarButtonAction(_ sender: Any) {
+        rightBarDropDown.selectionAction = { (index: Int, item: String) in
+            switch index {
+            case 0:
+                self.getDataAZ()
+                
+            case 1:
+                self.getDataZA()
+            default:
+                break
+            }
+        }
+        
+        rightBarDropDown.width = 140
+        rightBarDropDown.bottomOffset = CGPoint(x: 0, y:( rightBarDropDown.anchorView?.plainView.bounds.height )!)
+        rightBarDropDown.show()
     }
     
     @objc func deleteAllItem() {

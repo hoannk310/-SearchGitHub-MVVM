@@ -16,8 +16,6 @@ class FavoriteViewModel {
         for item in database.getAllItem() {
             items.value.append(item)
         }
-        print(items.value.count)
-        print(items.value.count , " 14")
     }
     
     func deleteItem(item: Favorite, index: Int) {
@@ -47,23 +45,39 @@ class FavoriteViewModel {
                     self.count = 0
                 }
             }
-        print(items.value.count , " 13")
     }
     
     func searchItem (text: String) {
         
         searchItems.value.removeAll()
-        
         guard !text.isEmpty else {
             return
         }
-            
         
         for item in self.database.getAllItem() {
             if item.fullName.contains(text) {
                 searchItems.value.append(item)
             }
         }
-       
+    }
+    
+    func sortItemAZ() {
+        items.value.removeAll()
+        let sortItem = database.getAllItem().sorted { (name1, name2) -> Bool in
+            return name1.fullName < name2.fullName
+        }
+        for item in sortItem {
+            items.value.append(item)
+        }
+    }
+    
+    func sortItemZA() {
+        items.value.removeAll()
+        let sortItem = database.getAllItem().sorted { (name1, name2) -> Bool in
+            return name1.fullName > name2.fullName
+        }
+        for item in sortItem {
+            items.value.append(item)
+        }
     }
 }

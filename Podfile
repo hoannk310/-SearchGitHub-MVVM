@@ -9,6 +9,7 @@ pod 'AlamofireNetworkActivityLogger'
 pod 'SVProgressHUD'
 pod 'AlamofireImage'
 pod 'RealmSwift'
+pod 'DropDown'
   # Pods for SearchRepositories+Mvvm
 
   target 'SearchRepositories+MvvmTests' do
