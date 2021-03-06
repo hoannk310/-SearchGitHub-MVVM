@@ -18,4 +18,16 @@ class Favorite: Object {
     @objc dynamic var nameAuthor: String = ""
     @objc dynamic var urlRepo: String = ""
     
+   init(id: Int,fullName: String,descrip: String,stargezersCount: Int,language: String,forksCount: Int,nameAuthor: String,urlRepo: String) {
+        self.id = id
+        self.fullName = fullName
+        self.descrip = descrip
+        self.stargezersCount = stargezersCount
+        self.language = language
+        self.forksCount = forksCount
+        self.nameAuthor = nameAuthor
+        self.urlRepo = urlRepo
+    }
+    override init(){}
+    
 }

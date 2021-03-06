@@ -51,17 +51,16 @@ final class MainViewModel {
         }
     }
     
-    func addFavorite( item: ItemModel) {
-        let favorite = Favorite()
-        favorite.id = item.id
-        favorite.descrip = item.description
-        favorite.nameAuthor = item.nameAuthor
-        favorite.fullName = item.fullName
-        favorite.forksCount = item.forksCount
-        favorite.stargezersCount = item.stargezersCount
-        favorite.language = item.language
-        favorite.urlRepo = item.urlRepo
-        
+    func addFavorite( item: ItemModel,vc: UIViewController) {
+        let favorite = Favorite(id: item.id,
+                                fullName: item.fullName,
+                                descrip: item.description,
+                                stargezersCount: item.stargezersCount,
+                                language: item.language,
+                                forksCount: item.forksCount,
+                                nameAuthor: item.nameAuthor,
+                                urlRepo: item.urlRepo)
+  
         let items = databaseRealm.getAllItem()
         
         for item in items {
@@ -70,15 +69,18 @@ final class MainViewModel {
             }
         }
         if (count == 0)  {
+            AppUtil.createNotification(title: "Success", body: "Successfully added to favorites", time: 0.1, identifier: "\(item.id)")
             databaseRealm.addData(object: favorite)
+           
             print("thêm")
         }else{
             count = 0
-            print("hihi")
+            AppUtil.showAlert(text: "Already exists in favorites", vc: vc)
         }
         
     }
     
+  
     
 }
 private extension MainViewModel {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 final class AppUtil: NSObject {
     
@@ -27,5 +28,30 @@ final class AppUtil: NSObject {
         }
         return nil
     }
-  
+    class func showAlert (text: String, vc: UIViewController) {
+        let alert = UIAlertController(title: "Error !!", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        alert.view.tintColor = .red
+        vc.present(alert, animated: true)
+    }
+    
+    class func createNotification (title: String, body: String, time: Double, identifier: String) {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            if error != nil {
+                print(error)
+            }
+        }
+        
+    }
+    
 }

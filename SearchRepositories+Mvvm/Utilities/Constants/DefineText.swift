@@ -7,7 +7,6 @@
 
 import Foundation
 // API
-let kNotConnectInternet         = "Vui lòng kiểm tra lại kết nối của bạn"
 
 // MAIN
 let kTitleSearch                = "Tìm kiếm"

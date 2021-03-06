@@ -15,7 +15,6 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireNetworkActivityLogger
-  - Realm
   - RealmSwift
   - SVProgressHUD
 
@@ -36,6 +35,6 @@ SPEC CHECKSUMS:
   RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 544da3b6ff28e0751c4b31343f2869b36c62f69b
+PODFILE CHECKSUM: aec54de9611aea2ad56943a4c8b8937f79b81728
 
 COCOAPODS: 1.10.1

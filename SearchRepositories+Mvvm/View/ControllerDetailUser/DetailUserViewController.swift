@@ -15,7 +15,6 @@ class DetailUserViewController: UIViewController{
     @IBOutlet weak var lblWeb: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
     var user: UserModel?
     private var items: [ItemModel] = []
     private var refreshControl: UIRefreshControl!
@@ -28,10 +27,12 @@ class DetailUserViewController: UIViewController{
         setUpView()
         hideKeyboardWhenTappedAround()
         handleRequestAPI()
- 
-        
+  
     }
-    
+ 
+    @IBAction func test(_ sender: Any) {
+        AppUtil.createNotification(title: "hihi", body: "hihi", time: 0.1, identifier: "hihi")
+    }
     
     func setUpView(){
         tableView.register(UINib(nibName: DetailUserTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DetailUserTableViewCell.identifier)

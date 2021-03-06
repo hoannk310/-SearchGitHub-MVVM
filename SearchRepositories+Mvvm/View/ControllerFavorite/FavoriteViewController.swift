@@ -12,9 +12,11 @@ import SafariServices
 class FavoriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBarFavo: UITextField!
     
     var viewModel = FavoriteViewModel()
     var items: [Favorite] = []
+    var searchItem: [Favorite] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,25 +32,75 @@ class FavoriteViewController: UIViewController {
         }
     }
     
+    func addData(){
+        viewModel.addItem(itemsFavo: items)
+        viewModel.items.bind { [weak self] (favorite) in
+            self?.items = favorite
+            self?.tableView.reloadData()
+        }
+    }
+    
+    @objc func getSearchData() {
+        viewModel.searchItem(text: searchBarFavo.text ?? "")
+        print(searchBarFavo.text)
+        viewModel.searchItems.bind { [weak self] (favorite) in
+            self?.searchItem = favorite
+            self?.tableView.reloadData()
+        }
+    }
+    
     func setupView(){
         tableView.register(UINib(nibName: FavoriteTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: FavoriteTableViewCell.identifier)
+        
         tableView.delegate = self
         tableView.dataSource = self
+        searchBarFavo.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteAllItem))
+    }
+    
+    @objc func deleteAllItem() {
+        let alert = UIAlertController(title: "Wairning", message: "Are you sure ??", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: { (alert) in
+            self.viewModel.deleteAll()
+            self.reloadTableView()
+        })
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true)
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
 extension FavoriteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if searchBarFavo.text!.isEmpty {
+            return items.count
+        }else {
+            return searchItem.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.identifier,for: indexPath) as? FavoriteTableViewCell else {
             return UITableViewCell()
         }
-        let viewModel = FavoriteCellModel(item: items[indexPath.row])
-        cell.bindViewModel(viewModel)
-        return cell
+        if searchBarFavo.text!.isEmpty {
+            let viewModel = FavoriteCellModel(item: items[indexPath.row])
+            cell.bindViewModel(viewModel)
+            return cell
+        }else {
+            let viewModel = FavoriteCellModel(item: searchItem[indexPath.row])
+            cell.bindViewModel(viewModel)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,5 +113,41 @@ extension FavoriteViewController: UITableViewDataSource {
 
 extension FavoriteViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
+            
+            self.viewModel.deleteItem(item: self.items[indexPath.row], index: indexPath.row)
+            self.reloadTableView()
+            completion(true)
+        }
+        delete.backgroundColor = .red
+        let conf = UISwipeActionsConfiguration(actions: [delete])
+        return conf
+        
+    }
+    
 }
 
+extension FavoriteViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        addData()
+    }
+}
+
+extension FavoriteViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(getSearchData), object: nil)
+        perform(#selector(getSearchData),with: textField, afterDelay: 0.1)
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        perform(#selector(getSearchData),with: textField, afterDelay: 0.1)
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchBarFavo.becomeFirstResponder()
+        return true
+    }
+}

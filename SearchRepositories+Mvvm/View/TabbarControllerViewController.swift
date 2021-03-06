@@ -28,7 +28,9 @@ class TabbarControllerViewController: UITabBarController {
         navController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
         return navController
     }
+
+ 
+    }
     
-    
-}
+
 

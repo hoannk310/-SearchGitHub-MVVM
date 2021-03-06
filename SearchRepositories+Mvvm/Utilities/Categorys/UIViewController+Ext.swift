@@ -20,26 +20,4 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    func showAlert (title: String?,
-                    message: String?,
-                    preferredStype: UIAlertController.Style,
-                    actions: UIAlertAction...){
-        
-        if (self.presentedViewController as? UIAlertController) != nil {
-            return
-        }
-        
-        let alertViewController = UIAlertController(title: title,
-                                                    message: message,
-                                                    preferredStyle: preferredStype)
-        for action in actions {
-            alertViewController.addAction(action)
-        }
-        present(alertViewController, animated: true, completion: nil)
-    }
-    
-    func showWarningAlert(message: String?) {
-        let closeAction = UIAlertAction(title: "Đóng", style: .default, handler: nil)
-        showAlert(title: "Thông báo", message: message, preferredStype: .alert, actions: closeAction)
-    }
 }

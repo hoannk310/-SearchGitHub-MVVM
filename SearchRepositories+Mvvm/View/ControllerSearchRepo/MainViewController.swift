@@ -7,12 +7,14 @@
 
 import UIKit
 import SafariServices
+import UserNotifications
 
 class MainViewController: UIViewController {
     @IBOutlet weak var txtSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblCount: UILabel!
     
+    let notificationCenter = UNUserNotificationCenter.current()
     private var items: [ItemModel] = []
     private var refreshControl: UIRefreshControl!
     private var canLoadMore: Bool = false
@@ -36,12 +38,16 @@ private extension MainViewController {
         tableView.delegate = self
         tableView.dataSource = self
         txtSearchText.delegate = self
-    
+        
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string:  "")
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
+        notificationCenter.delegate = self
+        notificationCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (succcess, error) in
+            
+        }
     }
     
     @objc func refresh(){
@@ -114,7 +120,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let edit = UIContextualAction(style: .destructive, title: "Favorite") { action, view, completion in
        
-            self.viewModel.addFavorite(item: self.items[indexPath.row])
+            self.viewModel.addFavorite(item: self.items[indexPath.row], vc: self)
             completion(true)
            
         }
@@ -141,5 +147,10 @@ extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         txtSearchText.becomeFirstResponder()
         return true
+    }
+}
+extension MainViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.badge,.sound])
     }
 }

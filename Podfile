@@ -8,7 +8,6 @@ pod 'Alamofire'
 pod 'AlamofireNetworkActivityLogger'
 pod 'SVProgressHUD'
 pod 'AlamofireImage'
-pod 'Realm'
 pod 'RealmSwift'
   # Pods for SearchRepositories+Mvvm
 
