@@ -55,7 +55,7 @@ class FavoriteViewModel {
         }
         
         for item in self.database.getAllItem() {
-            if item.fullName.contains(text) {
+            if item.localized_name.lowercased().contains(text.lowercased()) {
                 searchItems.value.append(item)
             }
         }
@@ -64,7 +64,7 @@ class FavoriteViewModel {
     func sortItemAZ() {
         items.value.removeAll()
         let sortItem = database.getAllItem().sorted { (name1, name2) -> Bool in
-            return name1.fullName < name2.fullName
+            return name1.localized_name < name2.localized_name
         }
         for item in sortItem {
             items.value.append(item)
@@ -74,7 +74,7 @@ class FavoriteViewModel {
     func sortItemZA() {
         items.value.removeAll()
         let sortItem = database.getAllItem().sorted { (name1, name2) -> Bool in
-            return name1.fullName > name2.fullName
+            return name1.localized_name > name2.localized_name
         }
         for item in sortItem {
             items.value.append(item)

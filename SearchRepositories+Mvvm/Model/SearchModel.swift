@@ -21,46 +21,31 @@ struct SearchModel: Codable {
 
 struct ItemModel: Codable {
     var id = 0
-    var fullName = ""
-    var description = ""
-    var role: [String] = []
-    var legs: Int = 0
+    var name = ""
+    var localized_name = ""
     var primary_attr: String = ""
-    var name: String = ""
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case fullName = "localized_name"
-        case description = "attack_type"
-        case role
-        case legs
-        case primary_attr
-        case name
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encodeIfPresent(id, forKey: .id)
-        try container.encodeIfPresent(fullName, forKey: .fullName)
-        try container.encodeIfPresent(description, forKey: .description)
-        try container.encodeIfPresent(role, forKey: .role)
-        try container.encodeIfPresent(legs, forKey: .legs)
-        try container.encodeIfPresent(primary_attr, forKey: .primary_attr)
-        try container.encodeIfPresent(name, forKey: .name)
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        container.decodeIfPresent(Int.self, forKey: .id, assignTo: &id)
-        container.decodeIfPresent(String.self, forKey: .fullName, assignTo: &fullName)
-        container.decodeIfPresent(String.self, forKey: .description, assignTo: &description)
-        container.decodeIfPresent(Array.self, forKey: .role, assignTo: &role)
-        container.decodeIfPresent(Int.self, forKey: .legs, assignTo: &legs)
-        container.decodeIfPresent(String.self, forKey: .primary_attr, assignTo: &primary_attr)
-        container.decodeIfPresent(String.self, forKey: .name, assignTo: &name)
-    }
+    var attack_type: String = ""
+    var roles: [String] = []
+    var img: String = ""
+    var icon: String = ""
+    var base_health: Int = 0
+    var base_health_regen: Double = 0.0
+    var base_mana: Int = 75
+    var base_mana_regen: Int = 0
+    var base_armor: Int = 0
+    var base_mr: Int = 0
+    var base_attack_min: Int = 0
+    var base_attack_max: Int = 0
+    var base_str: Int = 0
+    var base_agi: Int = 0
+    var base_int: Int = 0
+    var str_gain: Double = 0.0
+    var agi_gain: Double = 0.0
+    var int_gain: Double = 0.0
+    var attack_range: Int = 0
+    var projectile_speed: Int = 0
+    var attack_rate: Double = 0.0
+    var move_speed: Int = 0
 }
 
 

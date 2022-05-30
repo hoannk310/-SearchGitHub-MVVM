@@ -15,11 +15,11 @@ final class DetailCellModel {
     }
     
     var fullName: String {
-        return item.fullName
+        return item.localized_name
     }
     
     var description: String {
-        return item.description
+        return item.roles.joined(separator: ", ")
     }
     
     var subDescription: String {

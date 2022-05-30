@@ -9,7 +9,7 @@ import Alamofire
 
 extension APIClient {
     func searchRepository(completed: @escaping CompletionBlock){
-        getRequestPath(path: "heroes", callback: completed)
+        getRequestPath(path: "heroStats", callback: completed)
     }
     
     func searchUser(params: Parameters, completed: @escaping CompletionBlock) {

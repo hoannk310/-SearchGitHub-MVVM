@@ -15,14 +15,26 @@ final class FavoriteCellModel {
     }
     
     var fullName: String {
-        return item.fullName
+        return item.localized_name
     }
     
     var description: String {
-        return item.descrip
+        return item.role.joined(separator: ", ")
     }
     
     var subDescription: String {
-        return item.name
+        return item.primary_attr + " - " + item.attack_type
+    }
+    
+    var primary_attr: String {
+        return item.primary_attr
+    }
+    
+    var iconImg: String {
+        return "https://api.opendota.com" + item.icon
+    }
+    
+    var backgroundImage: String {
+        return "https://api.opendota.com" + item.img
     }
 }

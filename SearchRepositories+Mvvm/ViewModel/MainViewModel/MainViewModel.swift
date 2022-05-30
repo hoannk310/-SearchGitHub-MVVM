@@ -9,6 +9,8 @@ import Foundation
 import Alamofire
 import RealmSwift
 import SVProgressHUD
+import SwiftyJSON
+
 final class MainViewModel {
     
     private var isLoading = false
@@ -37,7 +39,7 @@ final class MainViewModel {
         if text.isEmpty {
             items.value.append(contentsOf: arrayFull)
         }
-        for item in arrayFull where item.fullName.lowercased().contains(text.lowercased()) {
+        for item in arrayFull where item.localized_name.lowercased().contains(text.lowercased()) {
             items.value.append(item)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -56,14 +58,8 @@ final class MainViewModel {
         }
     }
     
-    func addFavorite( item: ItemModel,vc: UIViewController) {
-        let favorite = Favorite(id: item.id,
-                                fullName: item.fullName,
-                                descrip: item.description,
-                                role: item.role,
-                                legs: item.legs,
-                                primary_attr: item.primary_attr,
-                                name: item.name)
+    func addFavorite( item: ItemModel, vc: UIViewController) {
+        let favorite = Favorite(id: item.id, name: item.name, localized_name: item.localized_name, primary_attr: item.primary_attr, attack_type: item.attack_type, role: item.roles, img: item.img, icon: item.icon, base_health: item.base_health, base_health_regen: item.base_health_regen, base_mana: item.base_mana, base_mana_regen: item.base_mana_regen, base_armor: item.base_armor, base_mr: item.base_mr, base_attack_min: item.base_attack_min, base_attack_max: item.base_attack_max, base_str: item.base_str, base_agi: item.base_agi, base_int: item.base_int, str_gain: item.str_gain, agi_gain: item.agi_gain, int_gain: item.int_gain, attack_range: item.attack_range, projectile_speed: item.projectile_speed, attack_rate: item.attack_rate, move_speed: item.move_speed)
         let items = databaseRealm.getAllItem()
         
         for item in items {
@@ -88,22 +84,53 @@ final class MainViewModel {
 }
 private extension MainViewModel {
     func handleResponseObject(response: ResponseObject?) {
+        
         isLoading = false
         do {
-          guard let repositories = try? AppUtil.convertJsonString(response, toType: [ItemModel].self) else{
-            items.value = []
-            curPage = BaseConstant.startPage
-            return
+            guard let data = response?.data else {
+                return
             }
-            
+            guard let responseJson = try? JSON(data: data) else{
+              items.value = []
+              curPage = BaseConstant.startPage
+              return
+              }
+            responseJson.arrayValue.forEach { respon in
+                let itemsJson = ItemModel(id: respon["id"].intValue,
+                                          name: respon["name"].stringValue,
+                                          localized_name: respon["localized_name"].stringValue,
+                                          primary_attr: respon["primary_attr"].stringValue,
+                                          attack_type: respon["attack_type"].stringValue,
+                                          roles: respon["roles"].arrayValue.map({$0.stringValue}),
+                                          img: respon["img"].stringValue,
+                                          icon: respon["icon"].stringValue,
+                                          base_health: respon["base_health"].intValue,
+                                          base_health_regen: respon["base_health_regen"].doubleValue,
+                                          base_mana: respon["base_mana"].intValue,
+                                          base_mana_regen: respon["base_mana_regen"].intValue,
+                                          base_armor: respon["base_armor"].intValue,
+                                          base_mr: respon["base_mr"].intValue,
+                                          base_attack_min: respon["base_attack_min"].intValue,
+                                          base_attack_max: respon["base_attack_max"].intValue,
+                                          base_str: respon["base_str"].intValue,
+                                          base_agi: respon["base_agi"].intValue,
+                                          base_int: respon["base_int"].intValue,
+                                          str_gain: respon["str_gain"].doubleValue,
+                                          agi_gain: respon["agi_gain"].doubleValue,
+                                          int_gain: respon["int_gain"].doubleValue,
+                                          attack_range: respon["attack_range"].intValue,
+                                          projectile_speed: respon["projectile_speed"].intValue,
+                                          attack_rate: respon["attack_rate"].doubleValue,
+                                          move_speed: respon["move_speed"].intValue)
+                items.value.append(itemsJson)
+            }
+         
          //   totalRepos.value = String(format: kRepositoryResult, "\(repositories.totalCount)")
             
-            curPage += 1
-            for item in repositories where !items.value.contains(item) {
-                items.value.append(item)
-            }
+//            for item in repositories where !items.value.contains(item) {
+//                items.value.append(item)
+//            }
             arrayFull = items.value
-            canLoadMore.value = !repositories.isEmpty
         }
     }
 }

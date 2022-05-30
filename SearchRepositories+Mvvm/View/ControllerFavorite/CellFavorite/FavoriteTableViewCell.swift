@@ -11,6 +11,7 @@ class FavoriteTableViewCell: UITableViewCell, Identifiable {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblDescrip: UILabel!
     @IBOutlet weak var LblSubDescription: UILabel!
+    @IBOutlet weak var icn_image: UIImageView!
     
     private var viewModel: FavoriteCellModel? {
         didSet {
@@ -40,5 +41,17 @@ class FavoriteTableViewCell: UITableViewCell, Identifiable {
         lblName.text = viewModel.fullName
         lblDescrip.text = viewModel.description
         LblSubDescription.text = viewModel.subDescription
+        switch viewModel.primary_attr {
+        case "agi":
+            LblSubDescription.textColor = UIColor.green
+        case "str":
+            LblSubDescription.textColor = UIColor.red
+        case "int":
+            LblSubDescription.textColor = UIColor.systemBlue
+        default:
+            break
+        }
+        
+        icn_image.downloadImage(url: viewModel.iconImg)
     }
 }
