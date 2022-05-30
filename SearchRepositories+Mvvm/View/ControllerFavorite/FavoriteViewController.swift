@@ -153,8 +153,6 @@ extension FavoriteViewController: UITableViewDataSource {
 //        let vc = SFSafariViewController(url: URL(string: items[indexPath.row].urlRepo)!)
 //        present(vc, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension FavoriteViewController: UITableViewDelegate {
@@ -169,16 +167,12 @@ extension FavoriteViewController: UITableViewDelegate {
         delete.backgroundColor = .red
         let conf = UISwipeActionsConfiguration(actions: [delete])
         return conf
-        
     }
-    
 }
 
 extension FavoriteViewController {
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        SVProgressHUD.dismiss()
+    override func viewWillAppear(_ animated: Bool) {
+        addData()
     }
 }
 
