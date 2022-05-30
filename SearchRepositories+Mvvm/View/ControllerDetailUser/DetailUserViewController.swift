@@ -89,8 +89,8 @@ extension DetailUserViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SFSafariViewController(url: URL(string: items[indexPath.row].urlRepo)!)
-        present(vc, animated: true, completion: nil)
+       // let vc = SFSafariViewController(url: URL(string: items[indexPath.row].urlRepo)!)
+       // present(vc, animated: true, completion: nil)
     }
     
 }

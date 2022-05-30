@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 import RealmSwift
-
+import SVProgressHUD
 final class MainViewModel {
     
     private var isLoading = false
@@ -18,34 +18,39 @@ final class MainViewModel {
     private var searchText = ""
     
     var items: Box<[ItemModel]> = Box([])
-    var hiddenViewSearchResult = Box(false)
     var totalRepos = Box(" ")
     var canLoadMore = Box(true)
     var databaseRealm = DataManagerRealm()
-    
+    var arrayFull: [ItemModel] = []
     var count = 0
     
     init() { }
     
     func refresh(text: String = "") {
-        isRefresh = true
+        guard !isLoading else {
+            return
+        }
+        
         curPage = BaseConstant.startPage
-        searchData(text: text)
+       
+        items.value.removeAll()
+        if text.isEmpty {
+            items.value.append(contentsOf: arrayFull)
+        }
+        for item in arrayFull where item.fullName.lowercased().contains(text.lowercased()) {
+            items.value.append(item)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            SVProgressHUD.dismiss()
+        }
     }
     
-    func searchData(text: String = "") {
+    func getDataHeros() {
         guard !isLoading else {
             return
         }
         isLoading = true
-        searchText = text
-        let param: Parameters = [
-            ParameterKeys.Search.q.rawValue: text,
-            ParameterKeys.Search.perPage.rawValue: numberOfpage,
-            ParameterKeys.Search.page.rawValue: "\(curPage)"
-        ]
-        print(param)
-        APIClient.sharedInstance.searchRepository(params: param) { [weak self] (response, error) in
+        APIClient.sharedInstance.searchRepository() { [weak self] (response, error) in
             guard let self = self else{ return }
             self.handleResponseObject(response: response!)
         }
@@ -55,12 +60,10 @@ final class MainViewModel {
         let favorite = Favorite(id: item.id,
                                 fullName: item.fullName,
                                 descrip: item.description,
-                                stargezersCount: item.stargezersCount,
-                                language: item.language,
-                                forksCount: item.forksCount,
-                                nameAuthor: item.nameAuthor,
-                                urlRepo: item.urlRepo)
-  
+                                role: item.role,
+                                legs: item.legs,
+                                primary_attr: item.primary_attr,
+                                name: item.name)
         let items = databaseRealm.getAllItem()
         
         for item in items {
@@ -87,26 +90,20 @@ private extension MainViewModel {
     func handleResponseObject(response: ResponseObject?) {
         isLoading = false
         do {
-          guard let repositories = try? AppUtil.convertJsonString(response, toType: SearchModel.self) else{
+          guard let repositories = try? AppUtil.convertJsonString(response, toType: [ItemModel].self) else{
             items.value = []
-            hiddenViewSearchResult.value = true
             curPage = BaseConstant.startPage
             return
             }
             
-            hiddenViewSearchResult.value = searchText.isEmpty
-            totalRepos.value = String(format: kRepositoryResult, "\(repositories.totalCount)")
-            
-            if isRefresh {
-                items.value.removeAll()
-                isRefresh = false
-            }
+         //   totalRepos.value = String(format: kRepositoryResult, "\(repositories.totalCount)")
             
             curPage += 1
-            for item in repositories.items where !items.value.contains(item) {
+            for item in repositories where !items.value.contains(item) {
                 items.value.append(item)
             }
-            canLoadMore.value = !repositories.items.isEmpty
+            arrayFull = items.value
+            canLoadMore.value = !repositories.isEmpty
         }
     }
 }

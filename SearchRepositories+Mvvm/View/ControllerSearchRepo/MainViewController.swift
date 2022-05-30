@@ -8,19 +8,17 @@
 import UIKit
 import SafariServices
 import UserNotifications
+import SVProgressHUD
 
 class MainViewController: UIViewController {
     @IBOutlet weak var txtSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblCount: UILabel!
     
     let notificationCenter = UNUserNotificationCenter.current()
     private var items: [ItemModel] = []
     private var refreshControl: UIRefreshControl!
     private var canLoadMore: Bool = false
     private let viewModel = MainViewModel()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,27 +56,13 @@ private extension MainViewController {
     @objc func handleSearchTextField(){
         let text = txtSearchText.text ?? ""
         viewModel.refresh(text: text)
-  
     }
     
     func handViewModel(){
+        viewModel.getDataHeros()
         viewModel.items.bind { [weak self] (items) in
             self?.items = items
             self?.tableView.reloadData()
-        }
-        
-        viewModel.hiddenViewSearchResult.bind { (isHidden) in
-            self.lblCount.isHidden = isHidden
-           
-        }
-        
-        viewModel.totalRepos.bind { (totalRepos) in
-            self.lblCount.text = "   " + totalRepos
-        }
-        viewModel.canLoadMore.bind { loadMore in
-            print(loadMore)
-            self.canLoadMore = loadMore
-           
         }
     }
 }
@@ -103,18 +87,18 @@ extension MainViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentOffset = scrollView.contentOffset.y
-        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-        
-        if maximumOffset - currentOffset <= 10.0, canLoadMore {
-            viewModel.searchData(text: txtSearchText.text ?? "")
-        }
-    }
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        let currentOffset = scrollView.contentOffset.y
+//        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+//
+//        if maximumOffset - currentOffset <= 10.0, canLoadMore {
+//            viewModel.searchData(text: txtSearchText.text ?? "")
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SFSafariViewController(url: URL(string: "\(items[indexPath.row].urlRepo)")!)
-        present(vc, animated: true, completion: nil)
+//        let vc = SFSafariViewController(url: URL(string: "\(items[indexPath.row].urlRepo)")!)
+//        present(vc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -136,11 +120,12 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(handleSearchTextField), object: nil)
-
+        SVProgressHUD.show()
         perform(#selector(handleSearchTextField),with: textField, afterDelay: 1)
         return true
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        SVProgressHUD.show()
         perform(#selector(handleSearchTextField),with: textField, afterDelay: 1)
         return true
     }

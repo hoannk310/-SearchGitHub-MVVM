@@ -34,7 +34,7 @@ class APIClient: Session {
     }
     
     func getRequestPath (path: String,
-                         param: Parameters,
+                         param: Parameters? = nil,
                          showLoading: Bool = true,
                          callback: @escaping CompletionBlock) {
         if !APIClient.isInternetAvailable() {
@@ -53,7 +53,7 @@ class APIClient: Session {
         if showLoading && !SVProgressHUD.isVisible() {
             SVProgressHUD.show()
         }
-        AF.request(urlString, parameters: param, headers: getHeader()).responseData { [weak self] (response) in
+        AF.request(urlString, headers: getHeader()).responseData { [weak self] (response) in
             self?.processResponse(response: response, callBack: callback)
         }
     }

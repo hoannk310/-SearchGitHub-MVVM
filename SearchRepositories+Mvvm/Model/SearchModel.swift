@@ -23,24 +23,19 @@ struct ItemModel: Codable {
     var id = 0
     var fullName = ""
     var description = ""
-    var stargezersCount = 0
-    var language = ""
-    var forksCount = 0
-    var nameAuthor = ""
-    var imgAuthor = ""
-    var urlRepo = ""
+    var role: [String] = []
+    var legs: Int = 0
+    var primary_attr: String = ""
+    var name: String = ""
     
     enum CodingKeys: String, CodingKey {
         case id
-        case fullName = "full_name"
-        case description
-        case stargezersCount = "stargazers_count"
-        case language
-        case forksCount = "forks_count"
-        case owner
-        case nameAuthor = "login"
-        case imgAuthor = "avatar_url"
-        case urlRepo = "html_url"
+        case fullName = "localized_name"
+        case description = "attack_type"
+        case role
+        case legs
+        case primary_attr
+        case name
     }
     
     func encode(to encoder: Encoder) throws {
@@ -49,10 +44,10 @@ struct ItemModel: Codable {
         try container.encodeIfPresent(id, forKey: .id)
         try container.encodeIfPresent(fullName, forKey: .fullName)
         try container.encodeIfPresent(description, forKey: .description)
-        try container.encodeIfPresent(stargezersCount, forKey: .stargezersCount)
-        try container.encodeIfPresent(language, forKey: .language)
-        try container.encodeIfPresent(forksCount, forKey: .forksCount)
-        try container.encodeIfPresent(urlRepo, forKey: .urlRepo)
+        try container.encodeIfPresent(role, forKey: .role)
+        try container.encodeIfPresent(legs, forKey: .legs)
+        try container.encodeIfPresent(primary_attr, forKey: .primary_attr)
+        try container.encodeIfPresent(name, forKey: .name)
     }
     
     init(from decoder: Decoder) throws {
@@ -61,18 +56,17 @@ struct ItemModel: Codable {
         container.decodeIfPresent(Int.self, forKey: .id, assignTo: &id)
         container.decodeIfPresent(String.self, forKey: .fullName, assignTo: &fullName)
         container.decodeIfPresent(String.self, forKey: .description, assignTo: &description)
-        container.decodeIfPresent(Int.self, forKey: .stargezersCount, assignTo: &stargezersCount)
-        container.decodeIfPresent(String.self, forKey: .language, assignTo: &language)
-        container.decodeIfPresent(Int.self, forKey: .forksCount, assignTo: &forksCount)
-        container.decodeIfPresent(String.self, forKey: .urlRepo, assignTo: &urlRepo)
-        let ownerContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .owner)
-        ownerContainer.decodeIfPresent(String.self, forKey: .nameAuthor, assignTo: &nameAuthor)
-        ownerContainer.decodeIfPresent(String.self, forKey: .imgAuthor, assignTo: &imgAuthor)
+        container.decodeIfPresent(Array.self, forKey: .role, assignTo: &role)
+        container.decodeIfPresent(Int.self, forKey: .legs, assignTo: &legs)
+        container.decodeIfPresent(String.self, forKey: .primary_attr, assignTo: &primary_attr)
+        container.decodeIfPresent(String.self, forKey: .name, assignTo: &name)
     }
 }
+
 
 extension ItemModel: Equatable {
     static func ==(lhs: ItemModel, rhs: ItemModel) -> Bool {
         return lhs.id == rhs.id
     }
 }
+

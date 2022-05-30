@@ -12,21 +12,19 @@ class Favorite: Object {
     @objc dynamic var id: Int  = 0
     @objc dynamic var fullName: String = ""
     @objc dynamic var descrip: String = ""
-    @objc dynamic var stargezersCount: Int = 0
-    @objc dynamic var language: String = ""
-    @objc dynamic var forksCount: Int = 0
-    @objc dynamic var nameAuthor: String = ""
-    @objc dynamic var urlRepo: String = ""
+    var role = List<String>()
+    @objc dynamic var legs: Int = 0
+    @objc dynamic var primary_attr: String = ""
+    @objc dynamic var name: String = ""
     
-   init(id: Int,fullName: String,descrip: String,stargezersCount: Int,language: String,forksCount: Int,nameAuthor: String,urlRepo: String) {
+    init(id: Int, fullName: String, descrip: String, role: [String], legs: Int, primary_attr: String, name: String) {
         self.id = id
         self.fullName = fullName
         self.descrip = descrip
-        self.stargezersCount = stargezersCount
-        self.language = language
-        self.forksCount = forksCount
-        self.nameAuthor = nameAuthor
-        self.urlRepo = urlRepo
+        self.role.append(objectsIn: role)
+        self.legs = legs
+        self.primary_attr = primary_attr
+        self.name = name
     }
     override init(){}
     

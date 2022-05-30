@@ -22,6 +22,6 @@ final class MainCellModel {
     }
     
     var subDescription: String {
-        return String(format: kSubDescription, item.language,"\(item.stargezersCount)","\(item.forksCount)")
+        return ""
     }
 }

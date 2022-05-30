@@ -23,6 +23,6 @@ final class FavoriteCellModel {
     }
     
     var subDescription: String {
-        return String(format: kSubDescription, item.language,"\(item.stargezersCount)","\(item.forksCount)")
+        return item.name
     }
 }
