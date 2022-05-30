@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchUserViewController" customModule="SearchRepositories_Mvvm" customModuleProvider="target">
             <connections>
-                <outlet property="lblCount" destination="gZR-eW-Kzo" id="zRf-bU-kU0"/>
                 <outlet property="searchUserTf" destination="yCL-RH-M6L" id="WK4-hc-FGG"/>
                 <outlet property="tableView" destination="HbL-MU-aTw" id="ADT-MW-gjc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -61,21 +61,14 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ejg-y9-qGm">
-                    <rect key="frame" x="0.0" y="106" width="414" height="790"/>
+                    <rect key="frame" x="0.0" y="106" width="414" height="756"/>
                     <subviews>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZR-eW-Kzo">
-                            <rect key="frame" x="0.0" y="10" width="414" height="0.0"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-MU-aTw">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="790"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="92" estimatedRowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-MU-aTw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="gZR-eW-Kzo" firstAttribute="top" secondItem="Ejg-y9-qGm" secondAttribute="top" constant="10" id="fkP-Rn-S6C"/>
                         <constraint firstAttribute="trailing" secondItem="HbL-MU-aTw" secondAttribute="trailing" id="fy2-Fz-zGr"/>
                     </constraints>
                 </stackView>
@@ -83,7 +76,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Ejg-y9-qGm" secondAttribute="bottom" id="3cE-0w-evj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ejg-y9-qGm" secondAttribute="bottom" id="3cE-0w-evj"/>
                 <constraint firstItem="YV2-vn-oSL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ajx-yz-QHT"/>
                 <constraint firstItem="Ejg-y9-qGm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FjH-V7-wBZ"/>
                 <constraint firstItem="YV2-vn-oSL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JZv-nN-y4u"/>

@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import SafariServices
 import DropDown
-
+import SVProgressHUD
 class FavoriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -176,8 +176,9 @@ extension FavoriteViewController: UITableViewDelegate {
 
 extension FavoriteViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        addData()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        SVProgressHUD.dismiss()
     }
 }
 

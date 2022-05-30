@@ -12,9 +12,9 @@ class TabbarControllerViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navRepo = generateNav(vc: MainViewController(), title: "Repositories", image: UIImage(systemName: "cylinder.split.1x2")!, selectedImage: UIImage(systemName: "cylinder.split.1x2.fill")!)
-        let navUser = generateNav(vc: SearchUserViewController(), title: "User", image: UIImage(systemName: "person.circle")!, selectedImage: UIImage(systemName: "person.circle.fill")!)
-        let navFavorite = generateNav(vc: FavoriteViewController(), title: "Favorite", image: UIImage(systemName: "suit.heart")!, selectedImage: UIImage(systemName: "suit.heart.fill")!)
+        let navRepo = generateNav(vc: MainViewController(), title: "Hero", image: UIImage(systemName: "cylinder.split.1x2")!, selectedImage: UIImage(systemName: "cylinder.split.1x2.fill")!)
+        let navUser = generateNav(vc: SearchUserViewController(), title: "Player", image: UIImage(systemName: "person.circle")!, selectedImage: UIImage(systemName: "person.circle.fill")!)
+        let navFavorite = generateNav(vc: FavoriteViewController(), title: "Favorite Hero", image: UIImage(systemName: "suit.heart")!, selectedImage: UIImage(systemName: "suit.heart.fill")!)
      viewControllers = [navRepo,navUser,navFavorite]
         
         let real = try! Realm()

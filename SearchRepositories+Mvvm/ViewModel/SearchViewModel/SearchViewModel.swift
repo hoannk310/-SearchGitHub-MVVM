@@ -2,6 +2,8 @@
 import Foundation
 import Alamofire
 import UIKit
+import SwiftyJSON
+import SVProgressHUD
 
 final class SearchViewModel {
     private var isLoading = false
@@ -11,29 +13,35 @@ final class SearchViewModel {
     private var searchText = ""
     
     var items: Box<[UserModel]> = Box([])
+    var arrayFull: [UserModel] = []
     var hiddenViewSearchResult = Box(false)
     var totalUsers = Box(" ")
     var canloadMore = Box(true)
     init() {}
     
     func refresh(text: String = "") {
-        isRefresh = true
-        curPage = BaseConstant.startPage
-        searchUser(text: text)
+        guard !isLoading else {
+            return
+        }
+               
+        items.value.removeAll()
+        if text.isEmpty {
+            items.value.append(contentsOf: arrayFull)
+        }
+        for item in arrayFull where item.name.lowercased().contains(text.lowercased()) {
+            items.value.append(item)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            SVProgressHUD.dismiss()
+        }
     }
-    
-    func searchUser(text: String = "") {
+    func getDataUser() {
         guard !isLoading else {
             return
         }
         isLoading = true
-        searchText = text
-        let param: Parameters = [
-            ParameterKeys.Search.q.rawValue: text,
-            ParameterKeys.Search.perPage.rawValue: numberOfpage,
-            ParameterKeys.Search.page.rawValue: "\(curPage)"
-        ]
-        APIClient.sharedInstance.searchUser(params: param) {[weak self] (response, error) in
+      
+        APIClient.sharedInstance.searchUser() {[weak self] (response, error) in
             guard let self = self else {return}
             self.handleUserObject(response: response!)
         }
@@ -45,29 +53,21 @@ private extension SearchViewModel {
     func handleUserObject(response: ResponseObject?) {
         isLoading = false
         do {
-            guard let users = try? AppUtil.convertJsonString(response, toType: SearchUser.self) else {
+            guard let data = response?.data else { return }
+            guard let respon = try? JSON(data: data) else {
                 items.value = []
                 hiddenViewSearchResult.value = true
-                curPage = BaseConstant.startPage
                 return
             }
             
-            hiddenViewSearchResult.value = searchText.isEmpty
-            totalUsers.value = String(format: kUserResult, "\(users.totalCount)")
-        
-            if isRefresh {
-                items.value.removeAll()
-                isRefresh = false
-            }
-            
-            curPage += 1
-            for item in users.items where !items.value.contains(item) {
-                items.value.append(item)
-            }
-            canloadMore.value = !users.items.isEmpty
+            respon.arrayValue.forEach({ item in
+                let user = UserModel(name: item["name"].stringValue,
+                                     avatar: item["avatar"].stringValue,
+                                     team_name: item["team_name"].stringValue)
+                items.value.append(user)
+            })
+            arrayFull = items.value
         }
     }
-
-  
 }
 

@@ -18,10 +18,10 @@ final class SearchCellModel {
     }
     
     var image: String {
-        return item.image
+        return item.avatar
     }
     
-    var url: String {
-        return item.url
+    var team: String {
+        return "Team: " + item.team_name
     }
 }

@@ -99,6 +99,11 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let vc = SFSafariViewController(url: URL(string: "\(items[indexPath.row].urlRepo)")!)
 //        present(vc, animated: true, completion: nil)
+        let vc = HeroDetailViewController()
+        vc.hero = viewModel.items.value[indexPath.row]
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

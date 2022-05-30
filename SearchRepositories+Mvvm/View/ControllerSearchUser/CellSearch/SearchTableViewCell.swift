@@ -40,7 +40,7 @@ class SearchTableViewCell: UITableViewCell, Identifiable {
         }
         lblName.text = viewModel.name
         imageUser.loadImage(url: viewModel.image)
-        lblUrl.text =  viewModel.url
+        lblUrl.text =  viewModel.team
     }
             
 }

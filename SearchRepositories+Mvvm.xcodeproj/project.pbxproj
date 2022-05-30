@@ -57,6 +57,9 @@
 		187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187EF18F25F09AF5000370EE /* FavoriteViewController.xib */; };
 		18C0587C25EDDF2B006518C1 /* TabbarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */; };
 		2CD01BD64AE9A70C912C8736 /* Pods_SearchRepositories_Mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC46CECC07395AF43AF58ED /* Pods_SearchRepositories_Mvvm.framework */; };
+		40FFAF192845267A006DCA61 /* hero_lore.json in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF182845267A006DCA61 /* hero_lore.json */; };
+		40FFAF1C284526D1006DCA61 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */; };
+		40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */; };
 		5F8216A4A49C9F0B1EBC35B9 /* Pods_SearchRepositories_MvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */; };
 		867BB902C0245AD754B43F58 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +140,9 @@
 		18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerViewController.swift; sourceTree = "<group>"; };
 		196BBDB0AB63D14A6DA90C0B /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BC46CECC07395AF43AF58ED /* Pods_SearchRepositories_Mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_Mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40FFAF182845267A006DCA61 /* hero_lore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero_lore.json; sourceTree = "<group>"; };
+		40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailViewController.xib; sourceTree = "<group>"; };
 		4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.debug.xcconfig"; sourceTree = "<group>"; };
 		B5C876DFB6A32EB4AFD48DB2 /* Pods-SearchRepositories+MvvmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 				185DD48625EF4A60004DBD28 /* CellMainRepos */,
 				186B763D25E3C23600602FFD /* MainViewController.swift */,
 				186B763E25E3C23600602FFD /* MainViewController.xib */,
+				40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */,
+				40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */,
 			);
 			path = ControllerSearchRepo;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				186B763125E3BC2A00602FFD /* View */,
 				186B75FF25E3BAAA00602FFD /* Info.plist */,
 				186B75F725E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld */,
+				40FFAF182845267A006DCA61 /* hero_lore.json */,
 			);
 			path = "SearchRepositories+Mvvm";
 			sourceTree = "<group>";
@@ -568,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186B75FE25E3BAAA00602FFD /* LaunchScreen.storyboard in Resources */,
+				40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */,
 				186B75FB25E3BAAA00602FFD /* Assets.xcassets in Resources */,
 				186B75F625E3BAA700602FFD /* Main.storyboard in Resources */,
 				18670C6E25EE4D88000F105B /* DetailUserViewController.xib in Resources */,
@@ -576,6 +586,7 @@
 				1864FD0125F0DE7E00EC8792 /* FavoriteTableViewCell.xib in Resources */,
 				187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */,
 				1873EFAA25EF39C8000BC643 /* DetailUserTableViewCell.xib in Resources */,
+				40FFAF192845267A006DCA61 /* hero_lore.json in Resources */,
 				186B764025E3C23600602FFD /* MainViewController.xib in Resources */,
 				187E239E25E4A51F009A1B46 /* MainTableViewCell.xib in Resources */,
 			);
@@ -705,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40FFAF1C284526D1006DCA61 /* HeroDetailViewController.swift in Sources */,
 				1865387225EF7BB9008D3295 /* DetailCellModel.swift in Sources */,
 				186B75EF25E3BAA700602FFD /* AppDelegate.swift in Sources */,
 				18601D0925E4DE0D00F0287E /* APIClient.swift in Sources */,

@@ -35,17 +35,7 @@ class DetailUserViewController: UIViewController{
     }
     
     func setUpView(){
-        tableView.register(UINib(nibName: DetailUserTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DetailUserTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        lblName.text = user?.name
-        lblWeb.text = user?.url
-        imgUser.loadImage(url: user!.image)
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.attributedTitle = NSAttributedString(string:  "")
-        refreshControl.addTarget(self, action: #selector(refresh), for:.valueChanged)
-        tableView.addSubview(refreshControl)
+       
     }
     
     @objc func refresh() {
@@ -60,9 +50,7 @@ class DetailUserViewController: UIViewController{
         }
  
         viewModel.canloadMore.bind { loadMore in
-            print(loadMore)
             self.canLoadMore = loadMore
-           
         }
     }
     

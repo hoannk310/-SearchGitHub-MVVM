@@ -71,16 +71,11 @@ final class MainViewModel {
             AppUtil.createNotification(title: "Success", body: "Successfully added to favorites", time: 0.1, identifier: "\(item.id)")
             databaseRealm.addData(object: favorite)
            
-            print("thêm")
         }else{
             count = 0
             AppUtil.showAlert(text: "Already exists in favorites", vc: vc)
         }
-        
     }
-    
-  
-    
 }
 private extension MainViewModel {
     func handleResponseObject(response: ResponseObject?) {

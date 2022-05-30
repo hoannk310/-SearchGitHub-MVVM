@@ -12,8 +12,8 @@ extension APIClient {
         getRequestPath(path: "heroStats", callback: completed)
     }
     
-    func searchUser(params: Parameters, completed: @escaping CompletionBlock) {
-        getRequestPath(path: "users", param: params, callback: completed)
+    func searchUser(completed: @escaping CompletionBlock) {
+        getRequestPath(path: "proPlayers", callback: completed)
     }
     
     func detailUserRepo(user: String, parmas: Parameters, completed: @escaping CompletionBlock){

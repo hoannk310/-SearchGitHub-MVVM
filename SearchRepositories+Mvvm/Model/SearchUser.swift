@@ -21,32 +21,8 @@ struct SearchUser: Codable {
 }
 struct UserModel: Codable {
     var name = ""
-    var image = ""
-    var url = ""
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "login"
-        case image = "avatar_url"
-        case url = "html_url"
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(image, forKey: .image)
-        try container.encodeIfPresent(url, forKey: .url)
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        container.decodeIfPresent(String.self, forKey: .name, assignTo: &name)
-        container.decodeIfPresent(String.self, forKey: .image, assignTo: &image)
-        container.decodeIfPresent(String.self, forKey: .url, assignTo: &url)
-     
-    }
-    
+    var avatar = ""
+    var team_name = ""
 }
 
 extension UserModel: Equatable {
