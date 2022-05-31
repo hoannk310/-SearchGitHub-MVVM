@@ -41,9 +41,24 @@ final class SearchViewModel {
         }
         isLoading = true
       
-        APIClient.sharedInstance.searchUser() {[weak self] (response, error) in
-            guard let self = self else {return}
-            self.handleUserObject(response: response!)
+//        APIClient.sharedInstance.searchUser() {[weak self] (response, error) in
+//            guard let self = self else {return}
+//            self.handleUserObject(response: response!)
+//        }
+        do {
+            let path = Bundle.main.path(forResource: "Player", ofType: "json")!
+            let jsonString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+            let respon = JSON(parseJSON: jsonString)
+          
+            respon.arrayValue.forEach({ item in
+                let user = UserModel(name: item["name"].stringValue,
+                                     avatar: item["avatar"].stringValue,
+                                     team_name: item["team_name"].stringValue)
+                items.value.append(user)
+            })
+            arrayFull = items.value
+        } catch _ {
+            
         }
     }
     

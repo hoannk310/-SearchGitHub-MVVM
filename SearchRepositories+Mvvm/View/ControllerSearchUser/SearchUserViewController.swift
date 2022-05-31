@@ -33,9 +33,27 @@ private extension SearchUserViewController {
     }
     
     private func getData() {
-        APIClient.sharedInstance.searchUser() {[weak self] (response, error) in
-            guard let self = self else {return}
-            self.handleUserObject(response: response!)
+        SVProgressHUD.show()
+        do {
+            let path = Bundle.main.path(forResource: "Player", ofType: "json")!
+            let jsonString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+            let respon = JSON(parseJSON: jsonString)
+            
+            respon.arrayValue.forEach({ item in
+                let user = UserModel(name: item["name"].stringValue,
+                                     avatar: item["avatar"].stringValue,
+                                     team_name: item["team_name"].stringValue,
+                                     steamid: item["steamid"].stringValue,
+                                     personaname: item["personaname"].stringValue,
+                                     team_tag: item["team_tag"].stringValue,
+                                     loccountrycode: item["loccountrycode"].stringValue,
+                                     avafull: item["avatarfull"].stringValue)
+                items.append(user)
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
+            })
+        } catch _ {
+            
         }
     }
     
@@ -85,5 +103,9 @@ extension SearchUserViewController: UITableViewDelegate {
         //        vc.user = items[indexPath.row]
         //        vc.hidesBottomBarWhenPushed = true
         //        navigationController?.pushViewController(vc, animated: true)
+        let vc = ProPlayerDetailViewController()
+        vc.user = items[indexPath.row]
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

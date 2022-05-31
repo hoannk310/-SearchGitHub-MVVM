@@ -23,6 +23,11 @@ struct UserModel: Codable {
     var name = ""
     var avatar = ""
     var team_name = ""
+    var steamid = ""
+    var personaname = ""
+    var team_tag = ""
+    var loccountrycode = ""
+    var avafull = ""
 }
 
 extension UserModel: Equatable {

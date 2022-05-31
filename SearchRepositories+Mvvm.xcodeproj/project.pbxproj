@@ -72,6 +72,9 @@
 		929BC8DA2845F267000FD5DF /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8D82845F267000FD5DF /* ItemDetailViewController.swift */; };
 		929BC8DB2845F267000FD5DF /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929BC8D92845F267000FD5DF /* ItemDetailViewController.xib */; };
 		929BC8DD2845F312000FD5DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8DC2845F312000FD5DF /* UIView+Extension.swift */; };
+		F026BFBA2846112100A12D52 /* Player.json in Resources */ = {isa = PBXBuildFile; fileRef = F026BFB92846112100A12D52 /* Player.json */; };
+		F026BFBD2846147400A12D52 /* ProPlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */; };
+		F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,9 @@
 		BAA0AA9B5B7D420BDB1F5122 /* Pods-SearchRepositories+MvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_MvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7654537EAB7C0C102181BA /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F026BFB92846112100A12D52 /* Player.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Player.json; sourceTree = "<group>"; };
+		F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPlayerDetailViewController.swift; sourceTree = "<group>"; };
+		F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProPlayerDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +250,8 @@
 				185DD48725EF4A75004DBD28 /* CellSearch */,
 				1874E6AF25EDE58200D7955E /* SearchUserViewController.swift */,
 				1874E6B025EDE58200D7955E /* SearchUserViewController.xib */,
+				F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */,
+				F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */,
 			);
 			path = ControllerSearchUser;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				186B75FF25E3BAAA00602FFD /* Info.plist */,
 				186B75F725E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld */,
 				40FFAF182845267A006DCA61 /* hero_lore.json */,
+				F026BFB92846112100A12D52 /* Player.json */,
 			);
 			path = "SearchRepositories+Mvvm";
 			sourceTree = "<group>";
@@ -654,10 +663,12 @@
 				929BC8D12845C785000FD5DF /* items.json in Resources */,
 				186B75F625E3BAA700602FFD /* Main.storyboard in Resources */,
 				18670C6E25EE4D88000F105B /* DetailUserViewController.xib in Resources */,
+				F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */,
 				929BC8CF2845C659000FD5DF /* ItemsListCell.xib in Resources */,
 				1874E6B225EDE58300D7955E /* SearchUserViewController.xib in Resources */,
 				185F186125EE172C000C51F9 /* SearchTableViewCell.xib in Resources */,
 				1864FD0125F0DE7E00EC8792 /* FavoriteTableViewCell.xib in Resources */,
+				F026BFBA2846112100A12D52 /* Player.json in Resources */,
 				187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */,
 				1873EFAA25EF39C8000BC643 /* DetailUserTableViewCell.xib in Resources */,
 				40FFAF192845267A006DCA61 /* hero_lore.json in Resources */,
@@ -808,6 +819,7 @@
 				187344A825E4B78A0058A9C3 /* ParameterKey.swift in Sources */,
 				18670C6D25EE4D88000F105B /* DetailUserViewController.swift in Sources */,
 				186B75F925E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld in Sources */,
+				F026BFBD2846147400A12D52 /* ProPlayerDetailViewController.swift in Sources */,
 				18C0587C25EDDF2B006518C1 /* TabbarControllerViewController.swift in Sources */,
 				1873448D25E4AF6A0058A9C3 /* AppUtil.swift in Sources */,
 				187344A325E4B77C0058A9C3 /* DefineText.swift in Sources */,
