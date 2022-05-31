@@ -32,7 +32,7 @@ class ItemsListCell: UICollectionViewCell {
     }
     
     private func setUpView() {
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = UIColor.blue.cgColor
+        containerView.layer.cornerRadius = 8
+       // containerView.layer.borderColor = UIColor.blue.cgColor
     }
 }
