@@ -7,10 +7,10 @@
 
 import UIKit
 import SVProgressHUD
+import SwiftyJSON
 
 class SearchUserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchUserTf: UITextField!
     
     private var items: [UserModel] = []
     private var refreshControl: UIRefreshControl!
@@ -20,8 +20,8 @@ class SearchUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        handViewModel()
         hideKeyboardWhenTappedAround()
+        getData()
     }
 }
 
@@ -30,35 +30,29 @@ private extension SearchUserViewController {
         tableView.register(UINib(nibName: SearchTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        searchUserTf.delegate = self
-        
-        refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tableView.addSubview(refreshControl)
     }
     
-    @objc func refresh() {
-        viewModel.refresh()
-        refreshControl.endRefreshing()
-    }
-    
-    @objc func handleSearchTextField(){
-        let text = searchUserTf.text ?? ""
-        viewModel.refresh(text: text)
-        
-    }
-    
-    func handViewModel(){
-        viewModel.getDataUser()
-        viewModel.items.bind { [weak self] (items) in
-            self?.items = items
-            self?.tableView.reloadData()
+    private func getData() {
+        APIClient.sharedInstance.searchUser() {[weak self] (response, error) in
+            guard let self = self else {return}
+            self.handleUserObject(response: response!)
         }
-        
-        viewModel.canloadMore.bind { loadMore in
-            self.canLoadMore = loadMore
-           
+    }
+    
+    private func handleUserObject(response: ResponseObject?) {
+        do {
+            guard let data = response?.data else { return }
+            guard let respon = try? JSON(data: data) else {
+                return
+            }
+            
+            respon.arrayValue.forEach({ item in
+                let user = UserModel(name: item["name"].stringValue,
+                                     avatar: item["avatar"].stringValue,
+                                     team_name: item["team_name"].stringValue)
+                items.append(user)
+                self.tableView.reloadData()
+            })
         }
     }
 }
@@ -77,45 +71,19 @@ extension SearchUserViewController: UITableViewDataSource {
         cell.bindViewModel(viewModel)
         return cell
     }
-  
+    
 }
 
 extension SearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
     }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let currentOffset = scrollView.contentOffset.y
-//        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-//
-//        if maximumOffset - currentOffset <= 10.0, canLoadMore {
-//            viewModel.searchUser(text: searchUserTf.text ?? "")
-//        }
-//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = DetailUserViewController()
-//        vc.title = items[indexPath.row].name
-//        vc.user = items[indexPath.row]
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension SearchUserViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        SVProgressHUD.show()
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(handleSearchTextField), object: nil)
-        perform(#selector(handleSearchTextField),with: textField, afterDelay: 1)
-       
-        return true
-    }
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        SVProgressHUD.show()
-        perform(#selector(handleSearchTextField),with: textField, afterDelay: 1)
-        return true
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchUserTf.becomeFirstResponder()
-        return true
+        //        let vc = DetailUserViewController()
+        //        vc.title = items[indexPath.row].name
+        //        vc.user = items[indexPath.row]
+        //        vc.hidesBottomBarWhenPushed = true
+        //        navigationController?.pushViewController(vc, animated: true)
     }
 }
