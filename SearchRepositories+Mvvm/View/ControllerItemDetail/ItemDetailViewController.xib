@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="SearchRepositories_Mvvm" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="9U1-Ta-399" id="aTh-ay-Xsa"/>
+                <outlet property="hintLabel" destination="2ZM-IZ-EPt" id="3Kq-h1-7zv"/>
+                <outlet property="imageView" destination="mcv-l7-R2x" id="QVJ-nH-huI"/>
+                <outlet property="itemNameLabel" destination="Jjf-Br-dKz" id="J1h-zQ-YNQ"/>
+                <outlet property="loreLabel" destination="kfV-ZI-tMe" id="UhJ-6E-Xif"/>
+                <outlet property="notesLabel" destination="GkW-os-oNy" id="BVL-tp-eNV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U1-Ta-399">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5H-LW-sIg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xef-uX-jlU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="566.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcv-l7-R2x">
+                                            <rect key="frame" x="30" y="30" width="354" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="KlF-hy-Wko"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blink Dagger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjf-Br-dKz">
+                                            <rect key="frame" x="25" y="250" width="364" height="27.5"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                            <color key="textColor" systemColor="systemPinkColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The fabled dagger used by the fastest assassin ever to walk the lands." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfV-ZI-tMe">
+                                            <rect key="frame" x="25" y="287.5" width="364" height="42.5"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                            <color key="textColor" systemColor="systemOrangeColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZM-IZ-EPt">
+                                            <rect key="frame" x="25" y="340" width="364" height="85"/>
+                                            <string key="text">Active: Blink Teleport to a target point up to 1200 units away. Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.</string>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                            <color key="textColor" systemColor="systemTealColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkW-os-oNy">
+                                            <rect key="frame" x="25" y="435" width="364" height="106.5"/>
+                                            <string key="text">Self-casting will cause you to teleport in the direction of your team's fountain.\nIf you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.</string>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Jjf-Br-dKz" firstAttribute="leading" secondItem="Xef-uX-jlU" secondAttribute="leading" constant="25" id="28T-IC-1YF"/>
+                                        <constraint firstItem="2ZM-IZ-EPt" firstAttribute="leading" secondItem="Xef-uX-jlU" secondAttribute="leading" constant="25" id="2zm-mt-jmX"/>
+                                        <constraint firstItem="2ZM-IZ-EPt" firstAttribute="top" secondItem="kfV-ZI-tMe" secondAttribute="bottom" constant="10" id="Hhw-xI-zdz"/>
+                                        <constraint firstItem="GkW-os-oNy" firstAttribute="leading" secondItem="Xef-uX-jlU" secondAttribute="leading" constant="25" id="Ifn-Yi-64v"/>
+                                        <constraint firstItem="mcv-l7-R2x" firstAttribute="top" secondItem="Xef-uX-jlU" secondAttribute="top" constant="30" id="JXa-qg-mRW"/>
+                                        <constraint firstItem="kfV-ZI-tMe" firstAttribute="top" secondItem="Jjf-Br-dKz" secondAttribute="bottom" constant="10" id="WJz-Uq-KPd"/>
+                                        <constraint firstAttribute="bottom" secondItem="GkW-os-oNy" secondAttribute="bottom" constant="25" id="arD-hz-38Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jjf-Br-dKz" secondAttribute="trailing" constant="25" id="cJz-Vw-gaQ"/>
+                                        <constraint firstItem="kfV-ZI-tMe" firstAttribute="leading" secondItem="Xef-uX-jlU" secondAttribute="leading" constant="25" id="dx6-uV-gdx"/>
+                                        <constraint firstAttribute="trailing" secondItem="2ZM-IZ-EPt" secondAttribute="trailing" constant="25" id="f8J-Q0-Y5g"/>
+                                        <constraint firstAttribute="trailing" secondItem="mcv-l7-R2x" secondAttribute="trailing" constant="30" id="fwG-aQ-I8o"/>
+                                        <constraint firstItem="mcv-l7-R2x" firstAttribute="leading" secondItem="Xef-uX-jlU" secondAttribute="leading" constant="30" id="lSl-GZ-aZS"/>
+                                        <constraint firstItem="Jjf-Br-dKz" firstAttribute="top" secondItem="mcv-l7-R2x" secondAttribute="bottom" constant="20" id="oaM-lq-IQq"/>
+                                        <constraint firstAttribute="trailing" secondItem="kfV-ZI-tMe" secondAttribute="trailing" constant="25" id="qvV-2G-7Ay"/>
+                                        <constraint firstItem="GkW-os-oNy" firstAttribute="top" secondItem="2ZM-IZ-EPt" secondAttribute="bottom" constant="10" id="rFX-25-pCb"/>
+                                        <constraint firstAttribute="trailing" secondItem="GkW-os-oNy" secondAttribute="trailing" constant="25" id="tl5-rV-T1v"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Xef-uX-jlU" secondAttribute="trailing" id="D1J-bk-rSW"/>
+                                <constraint firstItem="Xef-uX-jlU" firstAttribute="width" secondItem="O5H-LW-sIg" secondAttribute="width" id="eiZ-m2-zth"/>
+                                <constraint firstItem="Xef-uX-jlU" firstAttribute="top" secondItem="O5H-LW-sIg" secondAttribute="top" id="fcp-Lh-n0j"/>
+                                <constraint firstAttribute="bottom" secondItem="Xef-uX-jlU" secondAttribute="bottom" id="jHl-6h-vyD"/>
+                                <constraint firstItem="Xef-uX-jlU" firstAttribute="leading" secondItem="O5H-LW-sIg" secondAttribute="leading" id="wMR-Dx-eJy"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="O5H-LW-sIg" firstAttribute="top" secondItem="9U1-Ta-399" secondAttribute="top" id="5Ip-qr-IPx"/>
+                        <constraint firstItem="O5H-LW-sIg" firstAttribute="leading" secondItem="9U1-Ta-399" secondAttribute="leading" id="Umc-br-tOE"/>
+                        <constraint firstAttribute="bottom" secondItem="O5H-LW-sIg" secondAttribute="bottom" id="eRI-Lh-2Yh"/>
+                        <constraint firstAttribute="trailing" secondItem="O5H-LW-sIg" secondAttribute="trailing" id="o9h-ry-Tjd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9U1-Ta-399" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1HI-KT-5qc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9U1-Ta-399" secondAttribute="bottom" id="Fta-Ai-ilW"/>
+                <constraint firstItem="9U1-Ta-399" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bfu-nd-fHd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9U1-Ta-399" secondAttribute="trailing" id="jNb-UC-gIc"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="96"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
