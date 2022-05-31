@@ -72,6 +72,12 @@
 		929BC8DA2845F267000FD5DF /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8D82845F267000FD5DF /* ItemDetailViewController.swift */; };
 		929BC8DB2845F267000FD5DF /* ItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929BC8D92845F267000FD5DF /* ItemDetailViewController.xib */; };
 		929BC8DD2845F312000FD5DF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8DC2845F312000FD5DF /* UIView+Extension.swift */; };
+		929BC91D28466036000FD5DF /* BackButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC91028466036000FD5DF /* BackButtonCustom.swift */; };
+		929BC91E28466036000FD5DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC91128466036000FD5DF /* Constants.swift */; };
+		929BC92328466040000FD5DF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC92128466040000FD5DF /* WebViewController.swift */; };
+		929BC92428466040000FD5DF /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929BC92228466040000FD5DF /* WebViewController.xib */; };
+		929BC9282846611D000FD5DF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC9262846611D000FD5DF /* SplashViewController.swift */; };
+		929BC9292846611D000FD5DF /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929BC9272846611D000FD5DF /* SplashViewController.xib */; };
 		F026BFBA2846112100A12D52 /* Player.json in Resources */ = {isa = PBXBuildFile; fileRef = F026BFB92846112100A12D52 /* Player.json */; };
 		F026BFBD2846147400A12D52 /* ProPlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */; };
 		F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */; };
@@ -168,6 +174,12 @@
 		929BC8D82845F267000FD5DF /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		929BC8D92845F267000FD5DF /* ItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailViewController.xib; sourceTree = "<group>"; };
 		929BC8DC2845F312000FD5DF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		929BC91028466036000FD5DF /* BackButtonCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonCustom.swift; sourceTree = "<group>"; };
+		929BC91128466036000FD5DF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		929BC92128466040000FD5DF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		929BC92228466040000FD5DF /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		929BC9262846611D000FD5DF /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		929BC9272846611D000FD5DF /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		B5C876DFB6A32EB4AFD48DB2 /* Pods-SearchRepositories+MvvmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAA0AA9B5B7D420BDB1F5122 /* Pods-SearchRepositories+MvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_MvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,6 +341,7 @@
 		186B75ED25E3BAA700602FFD /* SearchRepositories+Mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				929BC90F28466036000FD5DF /* Extensions */,
 				186B763225E3BC3F00602FFD /* Resources */,
 				18601D0725E4DAF500F0287E /* LibraryAPI */,
 				186B763325E3BC5400602FFD /* Utilities */,
@@ -375,7 +388,8 @@
 		186B763125E3BC2A00602FFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				929BC8DE284600FD000FD5DF /* WebView */,
+				929BC9252846611D000FD5DF /* Splash */,
+				929BC92028466040000FD5DF /* WebView */,
 				929BC8D72845F248000FD5DF /* ControllerItemDetail */,
 				929BC8C62845C537000FD5DF /* ControllerListItems */,
 				18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */,
@@ -530,11 +544,31 @@
 			path = ControllerItemDetail;
 			sourceTree = "<group>";
 		};
-		929BC8DE284600FD000FD5DF /* WebView */ = {
+		929BC90F28466036000FD5DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				929BC91028466036000FD5DF /* BackButtonCustom.swift */,
+				929BC91128466036000FD5DF /* Constants.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		929BC92028466040000FD5DF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				929BC92128466040000FD5DF /* WebViewController.swift */,
+				929BC92228466040000FD5DF /* WebViewController.xib */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		929BC9252846611D000FD5DF /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				929BC9262846611D000FD5DF /* SplashViewController.swift */,
+				929BC9272846611D000FD5DF /* SplashViewController.xib */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		F8D81F06BBE53CD2ABF094F5 /* Frameworks */ = {
@@ -658,12 +692,14 @@
 				186B75FE25E3BAAA00602FFD /* LaunchScreen.storyboard in Resources */,
 				929BC8CA2845C55C000FD5DF /* ItemsListViewController.xib in Resources */,
 				40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */,
+				929BC92428466040000FD5DF /* WebViewController.xib in Resources */,
 				186B75FB25E3BAAA00602FFD /* Assets.xcassets in Resources */,
 				929BC8DB2845F267000FD5DF /* ItemDetailViewController.xib in Resources */,
 				929BC8D12845C785000FD5DF /* items.json in Resources */,
 				186B75F625E3BAA700602FFD /* Main.storyboard in Resources */,
 				18670C6E25EE4D88000F105B /* DetailUserViewController.xib in Resources */,
 				F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */,
+				929BC9292846611D000FD5DF /* SplashViewController.xib in Resources */,
 				929BC8CF2845C659000FD5DF /* ItemsListCell.xib in Resources */,
 				1874E6B225EDE58300D7955E /* SearchUserViewController.xib in Resources */,
 				185F186125EE172C000C51F9 /* SearchTableViewCell.xib in Resources */,
@@ -808,6 +844,7 @@
 				18601D0925E4DE0D00F0287E /* APIClient.swift in Sources */,
 				1873449525E4AF740058A9C3 /* Box.swift in Sources */,
 				187344BF25E4B9B90058A9C3 /* UIViewController+Ext.swift in Sources */,
+				929BC92328466040000FD5DF /* WebViewController.swift in Sources */,
 				1868586325F0C3CB00055878 /* DataManagerRealm.swift in Sources */,
 				929BC8DD2845F312000FD5DF /* UIView+Extension.swift in Sources */,
 				929BC8DA2845F267000FD5DF /* ItemDetailViewController.swift in Sources */,
@@ -815,12 +852,15 @@
 				187344BA25E4B89A0058A9C3 /* KeyedDegodingContainer.swift in Sources */,
 				187344B225E4B7AC0058A9C3 /* DefineKeys.swift in Sources */,
 				186B75F125E3BAA700602FFD /* SceneDelegate.swift in Sources */,
+				929BC91D28466036000FD5DF /* BackButtonCustom.swift in Sources */,
 				1868585225F0C16A00055878 /* FavoriteModel.swift in Sources */,
 				187344A825E4B78A0058A9C3 /* ParameterKey.swift in Sources */,
 				18670C6D25EE4D88000F105B /* DetailUserViewController.swift in Sources */,
+				929BC9282846611D000FD5DF /* SplashViewController.swift in Sources */,
 				186B75F925E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld in Sources */,
 				F026BFBD2846147400A12D52 /* ProPlayerDetailViewController.swift in Sources */,
 				18C0587C25EDDF2B006518C1 /* TabbarControllerViewController.swift in Sources */,
+				929BC91E28466036000FD5DF /* Constants.swift in Sources */,
 				1873448D25E4AF6A0058A9C3 /* AppUtil.swift in Sources */,
 				187344A325E4B77C0058A9C3 /* DefineText.swift in Sources */,
 				929BC8CE2845C659000FD5DF /* ItemsListCell.swift in Sources */,
@@ -1024,11 +1064,12 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "SearchRepositories+Mvvm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-Mvvm";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1045,11 +1086,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH8N4M9AZC;
 				INFOPLIST_FILE = "SearchRepositories+Mvvm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-Mvvm";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
