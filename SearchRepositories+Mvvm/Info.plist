@@ -31,6 +31,8 @@
 	<string>269499332017223</string>
 	<key>FacebookDisplayName</key>
 	<string>KU Be Guide</string>
+    <key>FacebookClientToken</key>
+    <string>15757acfd33018e767a4572a1ee556c0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
