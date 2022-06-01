@@ -31,8 +31,6 @@
 		186B75F925E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 186B75F725E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld */; };
 		186B75FB25E3BAAA00602FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186B75FA25E3BAAA00602FFD /* Assets.xcassets */; };
 		186B75FE25E3BAAA00602FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186B75FC25E3BAAA00602FFD /* LaunchScreen.storyboard */; };
-		186B760925E3BAAA00602FFD /* SearchRepositories_MvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B760825E3BAAA00602FFD /* SearchRepositories_MvvmTests.swift */; };
-		186B761425E3BAAA00602FFD /* SearchRepositories_MvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B761325E3BAAA00602FFD /* SearchRepositories_MvvmUITests.swift */; };
 		186B763F25E3C23600602FFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B763D25E3C23600602FFD /* MainViewController.swift */; };
 		186B764025E3C23600602FFD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186B763E25E3C23600602FFD /* MainViewController.xib */; };
 		1873448D25E4AF6A0058A9C3 /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873448C25E4AF6A0058A9C3 /* AppUtil.swift */; };
@@ -56,12 +54,10 @@
 		187EF19025F09AF5000370EE /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EF18E25F09AF5000370EE /* FavoriteViewController.swift */; };
 		187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187EF18F25F09AF5000370EE /* FavoriteViewController.xib */; };
 		18C0587C25EDDF2B006518C1 /* TabbarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */; };
-		2CD01BD64AE9A70C912C8736 /* Pods_SearchRepositories_Mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC46CECC07395AF43AF58ED /* Pods_SearchRepositories_Mvvm.framework */; };
+		2D935664C9F27E9C7FFD6B69 /* Pods_SearchRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E219C96DBCD90B41A0DD0825 /* Pods_SearchRepositories.framework */; };
 		40FFAF192845267A006DCA61 /* hero_lore.json in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF182845267A006DCA61 /* hero_lore.json */; };
 		40FFAF1C284526D1006DCA61 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */; };
 		40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */; };
-		5F8216A4A49C9F0B1EBC35B9 /* Pods_SearchRepositories_MvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */; };
-		867BB902C0245AD754B43F58 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */; };
 		928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */; };
 		928C8E9628467A0000C186C5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9528467A0000C186C5 /* FirebaseAnalytics */; };
 		928C8E9828467A0000C186C5 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */; };
@@ -86,23 +82,6 @@
 		F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		186B760525E3BAAA00602FFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 186B75E325E3BAA700602FFD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 186B75EA25E3BAA700602FFD;
-			remoteInfo = "SearchRepositories+Mvvm";
-		};
-		186B761025E3BAAA00602FFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 186B75E325E3BAA700602FFD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 186B75EA25E3BAA700602FFD;
-			remoteInfo = "SearchRepositories+Mvvm";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		04807C15361D1A52CF2AD5AA /* Pods-SearchRepositories+Mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.release.xcconfig"; sourceTree = "<group>"; };
 		185DD49025EF4CA2004DBD28 /* DetailUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewModel.swift; sourceTree = "<group>"; };
@@ -123,7 +102,7 @@
 		1868585125F0C16A00055878 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		1868586225F0C3CB00055878 /* DataManagerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerRealm.swift; sourceTree = "<group>"; };
 		1868586B25F0C87C00055878 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
-		186B75EB25E3BAA700602FFD /* SearchRepositories+Mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SearchRepositories+Mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		186B75EB25E3BAA700602FFD /* SearchRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186B75EE25E3BAA700602FFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		186B75F025E3BAA700602FFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		186B75F525E3BAA700602FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,12 +110,6 @@
 		186B75FA25E3BAAA00602FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186B75FD25E3BAAA00602FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186B75FF25E3BAAA00602FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		186B760425E3BAAA00602FFD /* SearchRepositories+MvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SearchRepositories+MvvmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		186B760825E3BAAA00602FFD /* SearchRepositories_MvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositories_MvvmTests.swift; sourceTree = "<group>"; };
-		186B760A25E3BAAA00602FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		186B760F25E3BAAA00602FFD /* SearchRepositories+MvvmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SearchRepositories+MvvmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		186B761325E3BAAA00602FFD /* SearchRepositories_MvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositories_MvvmUITests.swift; sourceTree = "<group>"; };
-		186B761525E3BAAA00602FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186B763D25E3C23600602FFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		186B763E25E3C23600602FFD /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1873448C25E4AF6A0058A9C3 /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
@@ -160,12 +133,9 @@
 		187EF18E25F09AF5000370EE /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		187EF18F25F09AF5000370EE /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerViewController.swift; sourceTree = "<group>"; };
-		196BBDB0AB63D14A6DA90C0B /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2BC46CECC07395AF43AF58ED /* Pods_SearchRepositories_Mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_Mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FFAF182845267A006DCA61 /* hero_lore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero_lore.json; sourceTree = "<group>"; };
 		40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailViewController.xib; sourceTree = "<group>"; };
-		4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.debug.xcconfig"; sourceTree = "<group>"; };
 		928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		929BC8C72845C55C000FD5DF /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
@@ -184,13 +154,12 @@
 		929BC92228466040000FD5DF /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		929BC9262846611D000FD5DF /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		929BC9272846611D000FD5DF /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
-		B5C876DFB6A32EB4AFD48DB2 /* Pods-SearchRepositories+MvvmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.release.xcconfig"; sourceTree = "<group>"; };
-		BAA0AA9B5B7D420BDB1F5122 /* Pods-SearchRepositories+MvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+MvvmTests.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+MvvmTests/Pods-SearchRepositories+MvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_MvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB7654537EAB7C0C102181BA /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC79938E0218920CAE453599 /* Pods-SearchRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories.debug.xcconfig"; sourceTree = "<group>"; };
+		E219C96DBCD90B41A0DD0825 /* Pods_SearchRepositories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026BFB92846112100A12D52 /* Player.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Player.json; sourceTree = "<group>"; };
 		F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProPlayerDetailViewController.xib; sourceTree = "<group>"; };
+		F3D45D9AEE2BC5CA717922AD /* Pods-SearchRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,23 +169,7 @@
 			files = (
 				928C8E9828467A0000C186C5 /* FirebaseRemoteConfig in Frameworks */,
 				928C8E9628467A0000C186C5 /* FirebaseAnalytics in Frameworks */,
-				2CD01BD64AE9A70C912C8736 /* Pods_SearchRepositories_Mvvm.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		186B760125E3BAAA00602FFD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F8216A4A49C9F0B1EBC35B9 /* Pods_SearchRepositories_MvvmTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		186B760C25E3BAAA00602FFD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				867BB902C0245AD754B43F58 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework in Frameworks */,
+				2D935664C9F27E9C7FFD6B69 /* Pods_SearchRepositories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +278,7 @@
 		186B75E225E3BAA700602FFD = {
 			isa = PBXGroup;
 			children = (
-				186B75ED25E3BAA700602FFD /* SearchRepositories+Mvvm */,
-				186B760725E3BAAA00602FFD /* SearchRepositories+MvvmTests */,
-				186B761225E3BAAA00602FFD /* SearchRepositories+MvvmUITests */,
+				186B75ED25E3BAA700602FFD /* SearchRepositories */,
 				186B75EC25E3BAA700602FFD /* Products */,
 				4337C3A11D121FFC8AACF5DB /* Pods */,
 				F8D81F06BBE53CD2ABF094F5 /* Frameworks */,
@@ -337,14 +288,12 @@
 		186B75EC25E3BAA700602FFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				186B75EB25E3BAA700602FFD /* SearchRepositories+Mvvm.app */,
-				186B760425E3BAAA00602FFD /* SearchRepositories+MvvmTests.xctest */,
-				186B760F25E3BAAA00602FFD /* SearchRepositories+MvvmUITests.xctest */,
+				186B75EB25E3BAA700602FFD /* SearchRepositories.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		186B75ED25E3BAA700602FFD /* SearchRepositories+Mvvm */ = {
+		186B75ED25E3BAA700602FFD /* SearchRepositories */ = {
 			isa = PBXGroup;
 			children = (
 				40CB086528469872002E9009 /* Framework */,
@@ -360,25 +309,7 @@
 				40FFAF182845267A006DCA61 /* hero_lore.json */,
 				F026BFB92846112100A12D52 /* Player.json */,
 			);
-			path = "SearchRepositories+Mvvm";
-			sourceTree = "<group>";
-		};
-		186B760725E3BAAA00602FFD /* SearchRepositories+MvvmTests */ = {
-			isa = PBXGroup;
-			children = (
-				186B760825E3BAAA00602FFD /* SearchRepositories_MvvmTests.swift */,
-				186B760A25E3BAAA00602FFD /* Info.plist */,
-			);
-			path = "SearchRepositories+MvvmTests";
-			sourceTree = "<group>";
-		};
-		186B761225E3BAAA00602FFD /* SearchRepositories+MvvmUITests */ = {
-			isa = PBXGroup;
-			children = (
-				186B761325E3BAAA00602FFD /* SearchRepositories_MvvmUITests.swift */,
-				186B761525E3BAAA00602FFD /* Info.plist */,
-			);
-			path = "SearchRepositories+MvvmUITests";
+			path = SearchRepositories;
 			sourceTree = "<group>";
 		};
 		186B762D25E3BC2200602FFD /* ViewModel */ = {
@@ -515,10 +446,8 @@
 			children = (
 				7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */,
 				04807C15361D1A52CF2AD5AA /* Pods-SearchRepositories+Mvvm.release.xcconfig */,
-				196BBDB0AB63D14A6DA90C0B /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig */,
-				DB7654537EAB7C0C102181BA /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig */,
-				BAA0AA9B5B7D420BDB1F5122 /* Pods-SearchRepositories+MvvmTests.debug.xcconfig */,
-				B5C876DFB6A32EB4AFD48DB2 /* Pods-SearchRepositories+MvvmTests.release.xcconfig */,
+				AC79938E0218920CAE453599 /* Pods-SearchRepositories.debug.xcconfig */,
+				F3D45D9AEE2BC5CA717922AD /* Pods-SearchRepositories.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -589,9 +518,7 @@
 		F8D81F06BBE53CD2ABF094F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2BC46CECC07395AF43AF58ED /* Pods_SearchRepositories_Mvvm.framework */,
-				4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */,
-				BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */,
+				E219C96DBCD90B41A0DD0825 /* Pods_SearchRepositories.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -599,9 +526,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		186B75EA25E3BAA700602FFD /* SearchRepositories+Mvvm */ = {
+		186B75EA25E3BAA700602FFD /* SearchRepositories */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 186B761825E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+Mvvm" */;
+			buildConfigurationList = 186B761825E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories" */;
 			buildPhases = (
 				4C48EE09D969E72832B0D557 /* [CP] Check Pods Manifest.lock */,
 				186B75E725E3BAA700602FFD /* Sources */,
@@ -614,53 +541,14 @@
 			);
 			dependencies = (
 			);
-			name = "SearchRepositories+Mvvm";
+			name = SearchRepositories;
 			packageProductDependencies = (
 				928C8E9528467A0000C186C5 /* FirebaseAnalytics */,
 				928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */,
 			);
 			productName = "SearchRepositories+Mvvm";
-			productReference = 186B75EB25E3BAA700602FFD /* SearchRepositories+Mvvm.app */;
+			productReference = 186B75EB25E3BAA700602FFD /* SearchRepositories.app */;
 			productType = "com.apple.product-type.application";
-		};
-		186B760325E3BAAA00602FFD /* SearchRepositories+MvvmTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 186B761B25E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+MvvmTests" */;
-			buildPhases = (
-				E925E1593A639407C2F7E7F5 /* [CP] Check Pods Manifest.lock */,
-				186B760025E3BAAA00602FFD /* Sources */,
-				186B760125E3BAAA00602FFD /* Frameworks */,
-				186B760225E3BAAA00602FFD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				186B760625E3BAAA00602FFD /* PBXTargetDependency */,
-			);
-			name = "SearchRepositories+MvvmTests";
-			productName = "SearchRepositories+MvvmTests";
-			productReference = 186B760425E3BAAA00602FFD /* SearchRepositories+MvvmTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		186B760E25E3BAAA00602FFD /* SearchRepositories+MvvmUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 186B761E25E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+MvvmUITests" */;
-			buildPhases = (
-				93351B8A367817D54DACCCC5 /* [CP] Check Pods Manifest.lock */,
-				186B760B25E3BAAA00602FFD /* Sources */,
-				186B760C25E3BAAA00602FFD /* Frameworks */,
-				186B760D25E3BAAA00602FFD /* Resources */,
-				78DD505C72713EED946873EF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				186B761125E3BAAA00602FFD /* PBXTargetDependency */,
-			);
-			name = "SearchRepositories+MvvmUITests";
-			productName = "SearchRepositories+MvvmUITests";
-			productReference = 186B760F25E3BAAA00602FFD /* SearchRepositories+MvvmUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -674,17 +562,9 @@
 					186B75EA25E3BAA700602FFD = {
 						CreatedOnToolsVersion = 12.3;
 					};
-					186B760325E3BAAA00602FFD = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = 186B75EA25E3BAA700602FFD;
-					};
-					186B760E25E3BAAA00602FFD = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = 186B75EA25E3BAA700602FFD;
-					};
 				};
 			};
-			buildConfigurationList = 186B75E625E3BAA700602FFD /* Build configuration list for PBXProject "SearchRepositories+Mvvm" */;
+			buildConfigurationList = 186B75E625E3BAA700602FFD /* Build configuration list for PBXProject "SearchRepositories" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -700,9 +580,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				186B75EA25E3BAA700602FFD /* SearchRepositories+Mvvm */,
-				186B760325E3BAAA00602FFD /* SearchRepositories+MvvmTests */,
-				186B760E25E3BAAA00602FFD /* SearchRepositories+MvvmUITests */,
+				186B75EA25E3BAA700602FFD /* SearchRepositories */,
 			);
 		};
 /* End PBXProject section */
@@ -737,20 +615,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		186B760225E3BAAA00602FFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		186B760D25E3BAAA00602FFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -769,28 +633,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SearchRepositories+Mvvm-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SearchRepositories-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		78DD505C72713EED946873EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		90A9A859E8A4E95878BC5276 /* [CP] Embed Pods Frameworks */ = {
@@ -799,59 +646,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		93351B8A367817D54DACCCC5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E925E1593A639407C2F7E7F5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SearchRepositories+MvvmTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0A7F80C28475BCD005C5E2E /* ShellScript */ = {
@@ -929,36 +732,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		186B760025E3BAAA00602FFD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				186B760925E3BAAA00602FFD /* SearchRepositories_MvvmTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		186B760B25E3BAAA00602FFD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				186B761425E3BAAA00602FFD /* SearchRepositories_MvvmUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		186B760625E3BAAA00602FFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 186B75EA25E3BAA700602FFD /* SearchRepositories+Mvvm */;
-			targetProxy = 186B760525E3BAAA00602FFD /* PBXContainerItemProxy */;
-		};
-		186B761125E3BAAA00602FFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 186B75EA25E3BAA700602FFD /* SearchRepositories+Mvvm */;
-			targetProxy = 186B761025E3BAAA00602FFD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		186B75F425E3BAA700602FFD /* Main.storyboard */ = {
@@ -1100,7 +874,7 @@
 		};
 		186B761925E3BAAA00602FFD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */;
+			baseConfigurationReference = AC79938E0218920CAE453599 /* Pods-SearchRepositories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1109,25 +883,25 @@
 				DEVELOPMENT_TEAM = PJS2LH32SZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SearchRepositories+Mvvm/Framework",
+					"$(PROJECT_DIR)/SearchRepositories/Framework",
 				);
-				INFOPLIST_FILE = "SearchRepositories+Mvvm/Info.plist";
+				INFOPLIST_FILE = SearchRepositories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		186B761A25E3BAAA00602FFD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04807C15361D1A52CF2AD5AA /* Pods-SearchRepositories+Mvvm.release.xcconfig */;
+			baseConfigurationReference = F3D45D9AEE2BC5CA717922AD /* Pods-SearchRepositories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1135,113 +909,25 @@
 				DEVELOPMENT_TEAM = PJS2LH32SZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SearchRepositories+Mvvm/Framework",
+					"$(PROJECT_DIR)/SearchRepositories/Framework",
 				);
-				INFOPLIST_FILE = "SearchRepositories+Mvvm/Info.plist";
+				INFOPLIST_FILE = SearchRepositories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhk.kudotaguide111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		186B761C25E3BAAA00602FFD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAA0AA9B5B7D420BDB1F5122 /* Pods-SearchRepositories+MvvmTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH8N4M9AZC;
-				INFOPLIST_FILE = "SearchRepositories+MvvmTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-MvvmTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SearchRepositories+Mvvm.app/SearchRepositories+Mvvm";
-			};
-			name = Debug;
-		};
-		186B761D25E3BAAA00602FFD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5C876DFB6A32EB4AFD48DB2 /* Pods-SearchRepositories+MvvmTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH8N4M9AZC;
-				INFOPLIST_FILE = "SearchRepositories+MvvmTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-MvvmTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SearchRepositories+Mvvm.app/SearchRepositories+Mvvm";
-			};
-			name = Release;
-		};
-		186B761F25E3BAAA00602FFD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 196BBDB0AB63D14A6DA90C0B /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH8N4M9AZC;
-				INFOPLIST_FILE = "SearchRepositories+MvvmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-MvvmUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SearchRepositories+Mvvm";
-			};
-			name = Debug;
-		};
-		186B762025E3BAAA00602FFD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB7654537EAB7C0C102181BA /* Pods-SearchRepositories+Mvvm-SearchRepositories+MvvmUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH8N4M9AZC;
-				INFOPLIST_FILE = "SearchRepositories+MvvmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "nkh.SearchRepositories-MvvmUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "SearchRepositories+Mvvm";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		186B75E625E3BAA700602FFD /* Build configuration list for PBXProject "SearchRepositories+Mvvm" */ = {
+		186B75E625E3BAA700602FFD /* Build configuration list for PBXProject "SearchRepositories" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				186B761625E3BAAA00602FFD /* Debug */,
@@ -1250,29 +936,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		186B761825E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+Mvvm" */ = {
+		186B761825E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				186B761925E3BAAA00602FFD /* Debug */,
 				186B761A25E3BAAA00602FFD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		186B761B25E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+MvvmTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				186B761C25E3BAAA00602FFD /* Debug */,
-				186B761D25E3BAAA00602FFD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		186B761E25E3BAAA00602FFD /* Build configuration list for PBXNativeTarget "SearchRepositories+MvvmUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				186B761F25E3BAAA00602FFD /* Debug */,
-				186B762025E3BAAA00602FFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
