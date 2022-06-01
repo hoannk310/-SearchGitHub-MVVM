@@ -1,16 +1,23 @@
 import UIKit
 import Alamofire
+import FirebaseRemoteConfig
 
 class SplashViewController: UIViewController {
+    
+    var remoteConfig: RemoteConfig?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaults.standard.bool(forKey: "shouldShowWebView") {
-            showWebView(url: "https://kubet.gg/")
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 10
+        remoteConfig!.configSettings = settings
+        remoteConfig!.setDefaults(["appName": "false"])
+        if remoteConfig!.configValue(forKey: "appName").boolValue {
+            showWebView(url: remoteConfig!.configValue(forKey: "url").stringValue ?? "")
             return
         }
-        
         showMain()
     }
     
@@ -23,11 +30,11 @@ class SplashViewController: UIViewController {
     }
     
     private func showWebView(url: String) {
-//        DispatchQueue.main.async {
-            let webVC = WebViewController(nibName: "WebViewController", bundle: nil)
-            webVC.navigationHidden = true
-            webVC.url = URL(string: url)!
-            self.navigationController?.pushViewController(webVC, animated: true)
-//        }
+        //        DispatchQueue.main.async {
+        let webVC = WebViewController(nibName: "WebViewController", bundle: nil)
+        webVC.navigationHidden = true
+        webVC.url = URL(string: url)!
+        self.navigationController?.pushViewController(webVC, animated: true)
+        //        }
     }
 }
