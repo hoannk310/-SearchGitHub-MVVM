@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>KU Be Dota Guide</string>
+	<string>KUBE Guide</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -31,10 +31,10 @@
 	<string>1</string>
 	<key>FacebookAppID</key>
 	<string>269499332017223</string>
+	<key>FacebookClientToken</key>
+	<string>15757acfd33018e767a4572a1ee556c0</string>
 	<key>FacebookDisplayName</key>
 	<string>KU Be Guide</string>
-    <key>FacebookClientToken</key>
-    <string>15757acfd33018e767a4572a1ee556c0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
