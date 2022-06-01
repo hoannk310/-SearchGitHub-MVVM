@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,6 +62,9 @@
 		40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */; };
 		5F8216A4A49C9F0B1EBC35B9 /* Pods_SearchRepositories_MvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EF543CF0112CB8B2864CF /* Pods_SearchRepositories_MvvmTests.framework */; };
 		867BB902C0245AD754B43F58 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */; };
+		928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */; };
+		928C8E9628467A0000C186C5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9528467A0000C186C5 /* FirebaseAnalytics */; };
+		928C8E9828467A0000C186C5 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */; };
 		929BC8C92845C55C000FD5DF /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8C72845C55C000FD5DF /* ItemsListViewController.swift */; };
 		929BC8CA2845C55C000FD5DF /* ItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929BC8C82845C55C000FD5DF /* ItemsListViewController.xib */; };
 		929BC8CE2845C659000FD5DF /* ItemsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BC8CC2845C659000FD5DF /* ItemsListCell.swift */; };
@@ -164,6 +167,7 @@
 		40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailViewController.xib; sourceTree = "<group>"; };
 		4416FEC99907FC250593EEA4 /* Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchRepositories_Mvvm_SearchRepositories_MvvmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.debug.xcconfig"; sourceTree = "<group>"; };
+		928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		929BC8C72845C55C000FD5DF /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
 		929BC8C82845C55C000FD5DF /* ItemsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsListViewController.xib; sourceTree = "<group>"; };
 		929BC8CC2845C659000FD5DF /* ItemsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListCell.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928C8E9828467A0000C186C5 /* FirebaseRemoteConfig in Frameworks */,
+				928C8E9628467A0000C186C5 /* FirebaseAnalytics in Frameworks */,
 				2CD01BD64AE9A70C912C8736 /* Pods_SearchRepositories_Mvvm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +411,7 @@
 		186B763225E3BC3F00602FFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */,
 				186B75EE25E3BAA700602FFD /* AppDelegate.swift */,
 				186B75F025E3BAA700602FFD /* SceneDelegate.swift */,
 				186B75F425E3BAA700602FFD /* Main.storyboard */,
@@ -607,6 +614,10 @@
 			dependencies = (
 			);
 			name = "SearchRepositories+Mvvm";
+			packageProductDependencies = (
+				928C8E9528467A0000C186C5 /* FirebaseAnalytics */,
+				928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */,
+			);
 			productName = "SearchRepositories+Mvvm";
 			productReference = 186B75EB25E3BAA700602FFD /* SearchRepositories+Mvvm.app */;
 			productType = "com.apple.product-type.application";
@@ -681,6 +692,9 @@
 				Base,
 			);
 			mainGroup = 186B75E225E3BAA700602FFD;
+			packageReferences = (
+				928C8E9428467A0000C186C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 186B75EC25E3BAA700602FFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -716,6 +730,7 @@
 				187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */,
 				1873EFAA25EF39C8000BC643 /* DetailUserTableViewCell.xib in Resources */,
 				40FFAF192845267A006DCA61 /* hero_lore.json in Resources */,
+				928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */,
 				186B764025E3C23600602FFD /* MainViewController.xib in Resources */,
 				187E239E25E4A51F009A1B46 /* MainTableViewCell.xib in Resources */,
 			);
@@ -1073,7 +1088,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PJS2LH32SZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SearchRepositories+Mvvm/Framework",
@@ -1099,7 +1114,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PJS2LH32SZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SearchRepositories+Mvvm/Framework",
@@ -1245,6 +1260,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		928C8E9428467A0000C186C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		928C8E9528467A0000C186C5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928C8E9428467A0000C186C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 928C8E9428467A0000C186C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		186B75F725E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld */ = {
