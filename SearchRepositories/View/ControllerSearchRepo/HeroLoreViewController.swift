@@ -26,7 +26,11 @@ class HeroLoreViewController: UIViewController {
             let name = hero.localized_name.lowercased()
             let nameReplace = name.replacingOccurrences(of: "-", with: "")
             let nameJson = nameReplace.replacingOccurrences(of: " ", with: "_")
-            self.textview.text = json[nameJson].stringValue
+            if hero.localized_name == "Shadow Fiend" {
+                self.textview.text = json["shadow_demon"].stringValue
+            } else {
+                self.textview.text = json[nameJson].stringValue
+            }
         } catch _ {
             
         }

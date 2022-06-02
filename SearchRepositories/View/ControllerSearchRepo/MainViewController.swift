@@ -96,14 +96,9 @@ extension MainViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let currentOffset = scrollView.contentOffset.y
-//        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-//
-//        if maximumOffset - currentOffset <= 10.0, canLoadMore {
-//            viewModel.searchData(text: txtSearchText.text ?? "")
-//        }
-//    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        tableView.keyboardDismissMode = .onDrag
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let vc = SFSafariViewController(url: URL(string: "\(items[indexPath.row].urlRepo)")!)
