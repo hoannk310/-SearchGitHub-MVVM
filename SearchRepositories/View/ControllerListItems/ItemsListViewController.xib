@@ -30,13 +30,36 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hor-k7-0nQ">
+                    <rect key="frame" x="334" y="782" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0Lb-Oa-YhR"/>
+                        <constraint firstAttribute="width" constant="50" id="983-st-SXh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="↻">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="randomTouched:" destination="-1" eventType="touchUpInside" id="KNc-FD-bjD"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="gjz-Id-4DT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IPm-CE-Ysp"/>
                 <constraint firstItem="gjz-Id-4DT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N0h-Rh-wI5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hor-k7-0nQ" secondAttribute="bottom" constant="30" id="Oau-D2-Nvb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gjz-Id-4DT" secondAttribute="bottom" id="SBg-Q8-NNX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hor-k7-0nQ" secondAttribute="trailing" constant="30" id="ajz-sp-E2J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gjz-Id-4DT" secondAttribute="trailing" id="de1-T0-ItN"/>
             </constraints>
             <point key="canvasLocation" x="139" y="110"/>
@@ -45,6 +68,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class ItemDetailViewController: UIViewController {
 
@@ -24,6 +25,9 @@ class ItemDetailViewController: UIViewController {
         
         setUpView()
     }
+    @IBAction private func closeTouched(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
     private func setUpView() {
         
@@ -36,10 +40,11 @@ class ItemDetailViewController: UIViewController {
         }
         
         let imageURL = URL(string: "https://api.opendota.com\(item.img ?? "")")
-        imageView.af.setImage(withURL: imageURL!)
+        imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        imageView.sd_setImage(with: imageURL!, placeholderImage: UIImage(named: "logo"))
         itemNameLabel.text = item.dname ?? ""
         loreLabel.text = item.lore ?? ""
-        hintLabel.text = item.hint?.first ?? ""
+        hintLabel.text = ""
         notesLabel.text = item.notes ??  ""
     }
 }
