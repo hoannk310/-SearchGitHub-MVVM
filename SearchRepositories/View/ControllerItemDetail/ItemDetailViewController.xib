@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="SearchRepositories_Mvvm" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailViewController" customModule="SearchRepositories" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="9U1-Ta-399" id="aTh-ay-Xsa"/>
                 <outlet property="hintLabel" destination="2ZM-IZ-EPt" id="3Kq-h1-7zv"/>
@@ -26,41 +26,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U1-Ta-399">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5H-LW-sIg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xef-uX-jlU">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="566.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="466.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcv-l7-R2x">
-                                            <rect key="frame" x="30" y="30" width="354" height="200"/>
+                                            <rect key="frame" x="30" y="30" width="354" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="KlF-hy-Wko"/>
+                                                <constraint firstAttribute="height" constant="100" id="KlF-hy-Wko"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blink Dagger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjf-Br-dKz">
-                                            <rect key="frame" x="25" y="250" width="364" height="27.5"/>
+                                            <rect key="frame" x="25" y="150" width="364" height="27.5"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                             <color key="textColor" systemColor="systemPinkColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The fabled dagger used by the fastest assassin ever to walk the lands." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfV-ZI-tMe">
-                                            <rect key="frame" x="25" y="287.5" width="364" height="42.5"/>
+                                            <rect key="frame" x="25" y="187.5" width="364" height="42.5"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                             <color key="textColor" systemColor="systemOrangeColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZM-IZ-EPt">
-                                            <rect key="frame" x="25" y="340" width="364" height="85"/>
+                                            <rect key="frame" x="25" y="240" width="364" height="85"/>
                                             <string key="text">Active: Blink Teleport to a target point up to 1200 units away. Blink Dagger cannot be used for 3 seconds after taking damage from an enemy hero or Roshan.</string>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                             <color key="textColor" systemColor="systemTealColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkW-os-oNy">
-                                            <rect key="frame" x="25" y="435" width="364" height="106.5"/>
+                                            <rect key="frame" x="25" y="335" width="364" height="106.5"/>
                                             <string key="text">Self-casting will cause you to teleport in the direction of your team's fountain.\nIf you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead.</string>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,14 +105,40 @@
                         <constraint firstAttribute="trailing" secondItem="O5H-LW-sIg" secondAttribute="trailing" id="o9h-ry-Tjd"/>
                     </constraints>
                 </view>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjF-xN-pyK">
+                    <rect key="frame" x="364" y="234" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="cMJ-4n-MwD"/>
+                        <constraint firstAttribute="height" constant="40" id="fMP-Rf-u7c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="X">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="closeTouched:" destination="-1" eventType="touchUpInside" id="xzX-ma-jyu"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9U1-Ta-399" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1HI-KT-5qc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9U1-Ta-399" secondAttribute="bottom" id="Fta-Ai-ilW"/>
-                <constraint firstItem="9U1-Ta-399" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bfu-nd-fHd"/>
+                <constraint firstItem="9U1-Ta-399" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="bfu-nd-fHd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9U1-Ta-399" secondAttribute="trailing" id="jNb-UC-gIc"/>
+                <constraint firstItem="JjF-xN-pyK" firstAttribute="trailing" secondItem="9U1-Ta-399" secondAttribute="trailing" constant="-10" id="lTb-M6-Tzz"/>
+                <constraint firstItem="JjF-xN-pyK" firstAttribute="top" secondItem="9U1-Ta-399" secondAttribute="top" constant="-10" id="tAe-MS-4IP"/>
             </constraints>
             <point key="canvasLocation" x="139" y="96"/>
         </view>

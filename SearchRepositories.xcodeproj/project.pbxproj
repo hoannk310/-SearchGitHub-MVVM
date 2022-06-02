@@ -61,6 +61,8 @@
 		40FFAF192845267A006DCA61 /* hero_lore.json in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF182845267A006DCA61 /* hero_lore.json */; };
 		40FFAF1C284526D1006DCA61 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */; };
 		40FFAF1D284526D1006DCA61 /* HeroDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */; };
+		9223D6402849173A002799AD /* RandomItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223D63E2849173A002799AD /* RandomItemViewController.swift */; };
+		9223D6412849173A002799AD /* RandomItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9223D63F2849173A002799AD /* RandomItemViewController.xib */; };
 		928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */; };
 		928C8E9628467A0000C186C5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9528467A0000C186C5 /* FirebaseAnalytics */; };
 		928C8E9828467A0000C186C5 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 928C8E9728467A0000C186C5 /* FirebaseRemoteConfig */; };
@@ -86,7 +88,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04807C15361D1A52CF2AD5AA /* Pods-SearchRepositories+Mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.release.xcconfig"; sourceTree = "<group>"; };
 		185DD49025EF4CA2004DBD28 /* DetailUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewModel.swift; sourceTree = "<group>"; };
 		185E678825E4EE5200A0B761 /* APIClient+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Ext.swift"; sourceTree = "<group>"; };
 		185E678D25E4F06A00A0B761 /* MainCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
@@ -142,7 +143,8 @@
 		40FFAF182845267A006DCA61 /* hero_lore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero_lore.json; sourceTree = "<group>"; };
 		40FFAF1A284526D1006DCA61 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		40FFAF1B284526D1006DCA61 /* HeroDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailViewController.xib; sourceTree = "<group>"; };
-		7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories+Mvvm.debug.xcconfig"; path = "Target Support Files/Pods-SearchRepositories+Mvvm/Pods-SearchRepositories+Mvvm.debug.xcconfig"; sourceTree = "<group>"; };
+		9223D63E2849173A002799AD /* RandomItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomItemViewController.swift; sourceTree = "<group>"; };
+		9223D63F2849173A002799AD /* RandomItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomItemViewController.xib; sourceTree = "<group>"; };
 		928C8E8F28466E1F00C186C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		929BC8C72845C55C000FD5DF /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
 		929BC8C82845C55C000FD5DF /* ItemsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsListViewController.xib; sourceTree = "<group>"; };
@@ -304,7 +306,6 @@
 		186B75ED25E3BAA700602FFD /* SearchRepositories */ = {
 			isa = PBXGroup;
 			children = (
-				40CB086528469872002E9009 /* Framework */,
 				929BC90F28466036000FD5DF /* Extensions */,
 				186B763225E3BC3F00602FFD /* Resources */,
 				18601D0725E4DAF500F0287E /* LibraryAPI */,
@@ -335,6 +336,7 @@
 		186B763125E3BC2A00602FFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9223D63D284916FE002799AD /* RandomItem */,
 				929BC9252846611D000FD5DF /* Splash */,
 				929BC92028466040000FD5DF /* WebView */,
 				929BC8D72845F248000FD5DF /* ControllerItemDetail */,
@@ -443,22 +445,22 @@
 			path = ControllerFavorite;
 			sourceTree = "<group>";
 		};
-		40CB086528469872002E9009 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
 		4337C3A11D121FFC8AACF5DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7E3A7BEFC23B27AF79AE24A7 /* Pods-SearchRepositories+Mvvm.debug.xcconfig */,
-				04807C15361D1A52CF2AD5AA /* Pods-SearchRepositories+Mvvm.release.xcconfig */,
 				AC79938E0218920CAE453599 /* Pods-SearchRepositories.debug.xcconfig */,
 				F3D45D9AEE2BC5CA717922AD /* Pods-SearchRepositories.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9223D63D284916FE002799AD /* RandomItem */ = {
+			isa = PBXGroup;
+			children = (
+				9223D63E2849173A002799AD /* RandomItemViewController.swift */,
+				9223D63F2849173A002799AD /* RandomItemViewController.xib */,
+			);
+			path = RandomItem;
 			sourceTree = "<group>";
 		};
 		929BC8C62845C537000FD5DF /* ControllerListItems */ = {
@@ -619,6 +621,7 @@
 				F026BFBA2846112100A12D52 /* Player.json in Resources */,
 				187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */,
 				1873EFAA25EF39C8000BC643 /* DetailUserTableViewCell.xib in Resources */,
+				9223D6412849173A002799AD /* RandomItemViewController.xib in Resources */,
 				40FFAF192845267A006DCA61 /* hero_lore.json in Resources */,
 				928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */,
 				186B764025E3C23600602FFD /* MainViewController.xib in Resources */,
@@ -719,6 +722,7 @@
 				929BC91E28466036000FD5DF /* Constants.swift in Sources */,
 				1873448D25E4AF6A0058A9C3 /* AppUtil.swift in Sources */,
 				187344A325E4B77C0058A9C3 /* DefineText.swift in Sources */,
+				9223D6402849173A002799AD /* RandomItemViewController.swift in Sources */,
 				929BC8CE2845C659000FD5DF /* ItemsListCell.swift in Sources */,
 				1873449B25E4B2310058A9C3 /* ResponseObject.swift in Sources */,
 				185F185A25EE1658000C51F9 /* SearchCellModel.swift in Sources */,

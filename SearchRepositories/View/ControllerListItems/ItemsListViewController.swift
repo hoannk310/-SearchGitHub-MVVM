@@ -19,6 +19,13 @@ class ItemsListViewController: UIViewController {
         loadData()
     }
     
+    @IBAction private func randomTouched(_ sender: Any) {
+        let randomVC = RandomItemViewController(nibName: "RandomItemViewController", bundle: nil)
+        randomVC.item = itemsList.filter { !($0.notes ?? "").isEmpty && !($0.lore ?? "").isEmpty }.randomElement()
+        randomVC.modalPresentationStyle = .overCurrentContext
+        navigationController?.present(randomVC, animated: true, completion: nil)
+    }
+    
     private func setUpView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -58,11 +65,7 @@ extension ItemsListViewController: UICollectionViewDataSource {
         let item = itemsList[indexPath.row]
         let itemDetail = ItemDetailViewController(nibName: "ItemDetailViewController", bundle: nil)
         itemDetail.item = item
-        self.navigationController?.pushViewController(itemDetail, animated: true)
+        itemDetail.modalPresentationStyle = .pageSheet
+        self.navigationController?.present(itemDetail, animated: true, completion: nil)
     }
-}
-
-extension ItemsListViewController {
-    
-    //    private func
 }
