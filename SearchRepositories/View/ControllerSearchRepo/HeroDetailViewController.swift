@@ -10,6 +10,7 @@ import SwiftyJSON
 import SVProgressHUD
 
 class HeroDetailViewController: UIViewController {
+    @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var imageHR: UIImageView!
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var textView: UITextView!
@@ -25,11 +26,16 @@ class HeroDetailViewController: UIViewController {
     
     @IBOutlet weak var base_int: UILabel!
     
+    @IBOutlet weak var addFavoriteButton: UIButton!
+    @IBOutlet weak var goodAgai: UILabel!
+    @IBOutlet weak var lineUpButotn: UIButton!
+    @IBOutlet weak var badAgai: UILabel!
     var hero: ItemModel = ItemModel()
+    var viewModel = MainViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let heightTV = textView.contentSize.height
-        scrollview.contentSize = CGSize(width: view.frame.width, height: heightTV + 472)
+        nameHero.text = hero.localized_name
+       
         let urlImage = "https://api.opendota.com" + hero.img
         imageHR.downloadImage(url: urlImage)
         baseHealth.text = "\(hero.base_health)"
@@ -41,16 +47,67 @@ class HeroDetailViewController: UIViewController {
         base_int.text = "\(hero.base_int)"
         base_str.text = "\(hero.base_str)"
         moveSpeed.text = "\(hero.move_speed)"
+      
+        addFavoriteButton.layer.cornerRadius = 10
+        lineUpButotn.layer.cornerRadius = 10
+        if !self.viewModel.isFavo(id: hero.id) {
+            self.addFavoriteButton.setTitle("Add Favorite", for: .normal)
+            self.addFavoriteButton.backgroundColor = .white
+            self.addFavoriteButton.setTitleColor(.orange, for: .normal)
+        } else {
+            self.addFavoriteButton.setTitle("Delete Favorite", for: .normal)
+            self.addFavoriteButton.backgroundColor = .orange
+            self.addFavoriteButton.setTitleColor(.white, for: .normal)
+        }
+        
+        getDataCouter()
+    }
+    
+    func getDataCouter() {
         do {
-            let path = Bundle.main.path(forResource: "hero_lore", ofType: "json")!
+            let path = Bundle.main.path(forResource: "abc", ofType: "json")!
             let jsonString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
-            let json = JSON(parseJSON: jsonString)
-            let name = hero.localized_name.lowercased()
-            let nameReplace = name.replacingOccurrences(of: "-", with: "")
-            let nameJson = nameReplace.replacingOccurrences(of: " ", with: "_")
-            self.textView.text = json[nameJson].stringValue
+            let respon = JSON(parseJSON: jsonString)
+            
+            respon.arrayValue.forEach({ item in
+                if item["name"].stringValue == hero.localized_name {
+                    let bad_against = item["bad_against"].arrayValue
+                    let good_against = item["good_against"].arrayValue
+                    var textbad_against: [String] = []
+                    var textgood_against: [String] = []
+                    bad_against.forEach { text in
+                        textbad_against.append(text.stringValue)
+                    }
+                    good_against.forEach { text in
+                        textgood_against.append(text.stringValue)
+                    }
+                    
+                    badAgai.text = textbad_against.joined(separator: ", ")
+                    goodAgai.text = textgood_against.joined(separator: ", ")
+                }
+            })
         } catch _ {
             
         }
+        
+    }
+    
+    @IBAction func addFavorite(_ sender: Any) {
+        if self.viewModel.isFavo(id: hero.id) {
+            self.viewModel.deleteItem(id: hero.id)
+            self.addFavoriteButton.setTitle("Add Favorite", for: .normal)
+            self.addFavoriteButton.backgroundColor = .white
+            self.addFavoriteButton.setTitleColor(.orange, for: .normal)
+        } else {
+            viewModel.addFavorite(item: hero, vc: self)
+            self.addFavoriteButton.setTitle("Delete Favorite", for: .normal)
+            self.addFavoriteButton.backgroundColor = .orange
+            self.addFavoriteButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    @IBAction func lineUp(_ sender: Any) {
+        let vc = HeroLoreViewController()
+        vc.hero = hero
+        self.present(vc, animated: true, completion: nil)
     }
 }

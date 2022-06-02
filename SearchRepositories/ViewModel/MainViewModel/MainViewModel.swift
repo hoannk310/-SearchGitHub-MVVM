@@ -58,6 +58,20 @@ final class MainViewModel {
         }
     }
     
+    func isFavo(id: Int) -> Bool {
+        if databaseRealm.getAllItem().contains(where: {$0.id == id}) {
+            return true
+        }
+        return false
+    }
+    
+    func deleteItem(id: Int) {
+        let listFavo = databaseRealm.getAllItem()
+        guard let item = listFavo.first(where: {$0.id == id}) else {return}
+        databaseRealm.deleteItemFromDB(object: item)
+        AppUtil.createNotification(title: "Delete item", body: "Has been delete item", time: 0.1, identifier: "DeleteItem")
+    }
+    
     func addFavorite( item: ItemModel, vc: UIViewController) {
         let favorite = Favorite(id: item.id, name: item.name, localized_name: item.localized_name, primary_attr: item.primary_attr, attack_type: item.attack_type, role: item.roles, img: item.img, icon: item.icon, base_health: item.base_health, base_health_regen: item.base_health_regen, base_mana: item.base_mana, base_mana_regen: item.base_mana_regen, base_armor: item.base_armor, base_mr: item.base_mr, base_attack_min: item.base_attack_min, base_attack_max: item.base_attack_max, base_str: item.base_str, base_agi: item.base_agi, base_int: item.base_int, str_gain: item.str_gain, agi_gain: item.agi_gain, int_gain: item.int_gain, attack_range: item.attack_range, projectile_speed: item.projectile_speed, attack_rate: item.attack_rate, move_speed: item.move_speed)
         let items = databaseRealm.getAllItem()

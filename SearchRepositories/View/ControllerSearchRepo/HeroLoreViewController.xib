@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroLoreViewController" customModule="SearchRepositories" customModuleProvider="target">
+            <connections>
+                <outlet property="nameLB" destination="mZ6-4Z-fjU" id="K1S-fl-3lP"/>
+                <outlet property="scrollview" destination="vWz-xo-LT2" id="qY4-rz-tVp"/>
+                <outlet property="textview" destination="qTD-FA-jq3" id="bTB-as-A7p"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTop" destination="zNm-By-xRl" id="ymk-vb-hxC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-By-xRl">
+                    <rect key="frame" x="132" y="60" width="150" height="4"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="NXh-iP-RDc"/>
+                        <constraint firstAttribute="width" constant="150" id="s4h-2W-StS"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWz-xo-LT2">
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-td-TGT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-FA-jq3">
+                                    <rect key="frame" x="16" y="54" width="382" height="622"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <string key="text">The monks of Turstarkuri watched the rugged valleys below their mountain monastery as wave after wave of invaders swept through the lower kingdoms. Ascetic and pragmatic, in their remote monastic eyrie they remained aloof from mundane strife, wrapped in meditation that knew no gods or elements of magic. Then came the Legion of the Dead God, crusaders with a sinister mandate to replace all local worship with their Unliving Lord's poisonous nihilosophy. From a landscape that had known nothing but blood and battle for a thousand years, they tore the souls and bones of countless fallen legions and pitched them against Turstarkuri. The monastery stood scarcely a fortnight against the assault, and the few monks who bothered to surface from their meditations believed the invaders were but demonic visions sent to distract them from meditation. They died where they sat on their silken cushions. Only one youth survived--a pilgrim who had come as an acolyte, seeking wisdom, but had yet to be admitted to the monastery. He watched in horror as the monks to whom he had served tea and nettles were first slaughtered, then raised to join the ranks of the Dead God's priesthood. With nothing but a few of Turstarkuri's prized dogmatic scrolls, he crept away to the comparative safety of other lands, swearing to obliterate not only the Dead God's magic users--but to put an end to magic altogether.</string>
+                                    <color key="textColor" systemColor="labelColor"/>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ6-4Z-fjU">
+                                    <rect key="frame" x="185.5" y="16" width="43.5" height="22"/>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="qTD-FA-jq3" firstAttribute="leading" secondItem="ERh-td-TGT" secondAttribute="leading" constant="16" id="5iX-8F-d2T"/>
+                                <constraint firstItem="mZ6-4Z-fjU" firstAttribute="top" secondItem="ERh-td-TGT" secondAttribute="top" constant="16" id="AHT-vK-4kH"/>
+                                <constraint firstAttribute="trailing" secondItem="qTD-FA-jq3" secondAttribute="trailing" constant="16" id="EBG-TT-jFK"/>
+                                <constraint firstAttribute="bottom" secondItem="qTD-FA-jq3" secondAttribute="bottom" constant="16" id="PCl-eF-bQ2"/>
+                                <constraint firstItem="mZ6-4Z-fjU" firstAttribute="centerX" secondItem="ERh-td-TGT" secondAttribute="centerX" id="kHk-eK-2y9"/>
+                                <constraint firstItem="qTD-FA-jq3" firstAttribute="top" secondItem="mZ6-4Z-fjU" secondAttribute="bottom" constant="16" id="wwf-J8-xaI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ERh-td-TGT" firstAttribute="top" secondItem="Ezb-84-nAP" secondAttribute="top" id="8aR-LI-e0P"/>
+                        <constraint firstItem="ERh-td-TGT" firstAttribute="bottom" secondItem="Ezb-84-nAP" secondAttribute="bottom" id="MhY-wS-FbR"/>
+                        <constraint firstItem="ERh-td-TGT" firstAttribute="leading" secondItem="Ezb-84-nAP" secondAttribute="leading" id="QTC-2n-cPD"/>
+                        <constraint firstItem="ERh-td-TGT" firstAttribute="trailing" secondItem="Ezb-84-nAP" secondAttribute="trailing" id="iQH-jH-EDF"/>
+                        <constraint firstItem="ERh-td-TGT" firstAttribute="width" secondItem="XKe-Zl-rq6" secondAttribute="width" id="w9F-WU-PxA"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Ezb-84-nAP"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="XKe-Zl-rq6"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zNm-By-xRl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="50x-Xe-fCh"/>
+                <constraint firstItem="zNm-By-xRl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9dK-06-k7Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vWz-xo-LT2" secondAttribute="bottom" id="Hdw-0e-WwP"/>
+                <constraint firstItem="vWz-xo-LT2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f5S-1y-nws"/>
+                <constraint firstItem="vWz-xo-LT2" firstAttribute="top" secondItem="zNm-By-xRl" secondAttribute="bottom" id="ubK-F3-yWM"/>
+                <constraint firstAttribute="trailing" secondItem="vWz-xo-LT2" secondAttribute="trailing" id="zPp-tr-pGd"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

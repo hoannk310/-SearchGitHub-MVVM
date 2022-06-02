@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class FavoriteCellModel {
     private var item : Favorite

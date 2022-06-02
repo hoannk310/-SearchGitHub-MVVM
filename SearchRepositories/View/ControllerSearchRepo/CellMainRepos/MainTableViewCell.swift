@@ -13,7 +13,8 @@ class MainTableViewCell: UITableViewCell,Identifiable {
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var LblSubDescription: UILabel!
     @IBOutlet weak var icnHero: UIImageView!
-        
+    @IBOutlet weak var imageFavo: UIImageView!
+    var actionFavo: (() -> ())?
     private var viewModel: MainCellModel? {
         didSet {
             updateUI()
@@ -52,8 +53,11 @@ class MainTableViewCell: UITableViewCell,Identifiable {
         default:
             break
         }
-        
+        imageFavo.image = viewModel.favoImage()
         icnHero.downloadImage(url: viewModel.iconImg)
+    }
+    @IBAction func addfavo(_ sender: Any) {
+        actionFavo?()
     }
 }
 

@@ -36,22 +36,20 @@ final class AppUtil: NSObject {
     }
     
     class func createNotification (title: String, body: String, time: Double, identifier: String) {
-        let center = UNUserNotificationCenter.current()
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = .default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        center.add(request) { (error) in
-            if error != nil {
-                print(error)
-            }
-        }
-        
+//        let center = UNUserNotificationCenter.current()
+//        let content = UNMutableNotificationContent()
+//        content.title = title
+//        content.body = body
+//        content.sound = .default
+//
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+//
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//
+//        center.add(request) { (error) in
+//            if error != nil {
+//                print(error)
+//            }
+//        }
     }
-    
 }

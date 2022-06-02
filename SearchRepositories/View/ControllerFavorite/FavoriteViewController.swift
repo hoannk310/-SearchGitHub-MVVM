@@ -16,16 +16,14 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var searchBarFavo: UITextField!
     @IBOutlet weak var menuBarButton: UIButton!
     
-    var viewModel = FavoriteViewModel()
+    var viewModel: FavoriteViewModel!
     var items: [Favorite] = []
     var searchItem: [Favorite] = []
     let rightBarDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getData()
-        setupView()
+      
     }
     
     func getData(){
@@ -204,7 +202,9 @@ extension FavoriteViewController: UITableViewDelegate {
 
 extension FavoriteViewController {
     override func viewWillAppear(_ animated: Bool) {
-        addData()
+        viewModel = FavoriteViewModel()
+        getData()
+        setupView()
     }
 }
 

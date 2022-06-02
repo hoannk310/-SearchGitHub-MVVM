@@ -7,14 +7,13 @@
 
 import UIKit
 import SafariServices
-import UserNotifications
 import SVProgressHUD
 
 class MainViewController: UIViewController {
     @IBOutlet weak var txtSearchText: UITextField!
+    @IBOutlet weak var viewSeach: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    let notificationCenter = UNUserNotificationCenter.current()
     private var items: [ItemModel] = []
     private var refreshControl: UIRefreshControl!
     private var canLoadMore: Bool = false
@@ -26,6 +25,11 @@ class MainViewController: UIViewController {
         setupTableView()
         hideKeyboardWhenTappedAround()
         handViewModel()
+        viewSeach.layer.cornerRadius = 15
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 }
 private extension MainViewController {
@@ -42,10 +46,6 @@ private extension MainViewController {
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
-        notificationCenter.delegate = self
-        notificationCenter.requestAuthorization(options: [.alert,.badge,.sound]) { (succcess, error) in
-            
-        }
     }
     
     @objc func refresh(){
@@ -78,6 +78,15 @@ extension MainViewController: UITableViewDataSource {
         }
         let viewModel = MainCellModel(item: items[indexPath.row])
         cell.bindViewModel(viewModel)
+        cell.actionFavo = {
+            if self.viewModel.isFavo(id: self.items[indexPath.row].id) {
+                self.viewModel.deleteItem(id: self.items[indexPath.row].id)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            } else {
+                self.viewModel.addFavorite(item: self.items[indexPath.row], vc: self)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
         return cell
     }
     
@@ -106,21 +115,19 @@ extension MainViewController: UITableViewDelegate {
         
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let edit = UIContextualAction(style: .destructive, title: "Favorite") { action, view, completion in
-       
-            self.viewModel.addFavorite(item: self.items[indexPath.row], vc: self)
-            completion(true)
-           
-        }
-        
-        edit.backgroundColor = .green
-        let conf = UISwipeActionsConfiguration(actions: [edit])
-        return conf
-        
-    }
-    
-  
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let edit = UIContextualAction(style: .destructive, title: "Favorite") { action, view, completion in
+//
+//            self.viewModel.addFavorite(item: self.items[indexPath.row], vc: self)
+//            completion(true)
+//
+//        }
+//
+//        edit.backgroundColor = .green
+//        let conf = UISwipeActionsConfiguration(actions: [edit])
+//        return conf
+//
+//    }
 }
 extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -137,10 +144,5 @@ extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         txtSearchText.becomeFirstResponder()
         return true
-    }
-}
-extension MainViewController: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert,.badge,.sound])
     }
 }

@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+import RealmSwift
 
 final class MainCellModel {
     private var item : ItemModel
+    var database = DataManagerRealm()
     init(item: ItemModel) {
         self.item = item
     }
@@ -35,5 +38,12 @@ final class MainCellModel {
     
     var backgroundImage: String {
         return "https://api.opendota.com" + item.img
+    }
+    
+    func favoImage() -> UIImage {
+        if database.getAllItem().contains(where: {$0.id == item.id}) {
+            return UIImage(systemName: "star.fill") ?? UIImage()
+        }
+        return UIImage(systemName: "star") ?? UIImage()
     }
 }
