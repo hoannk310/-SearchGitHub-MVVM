@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         handViewModel()
         viewSeach.layer.cornerRadius = 15
+        tableView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +98,7 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        tableView.keyboardDismissMode = .onDrag
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
