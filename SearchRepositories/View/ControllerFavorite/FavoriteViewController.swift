@@ -104,7 +104,7 @@ class FavoriteViewController: UIViewController {
     }
     
     @objc func deleteAllItem() {
-        let alert = UIAlertController(title: "Wairning", message: "Are you sure ??", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Wairning", message: "Are you sure you want to delete them all?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: { (alert) in
             self.viewModel.deleteAll()

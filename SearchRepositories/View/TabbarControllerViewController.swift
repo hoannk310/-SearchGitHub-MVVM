@@ -12,10 +12,10 @@ class TabbarControllerViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navRepo = generateNav(vc: MainViewController(), title: "Hero", image: UIImage(systemName: "cylinder.split.1x2")!, selectedImage: UIImage(systemName: "cylinder.split.1x2.fill")!)
-        let navUser = generateNav(vc: SearchUserViewController(), title: "Player", image: UIImage(systemName: "person.circle")!, selectedImage: UIImage(systemName: "person.circle.fill")!)
-        let navItems = generateNav(vc: ItemsListViewController(), title: "Items", image: UIImage(systemName: "line.3.horizontal.circle")!, selectedImage: UIImage(systemName: "line.3.horizontal.circle.fill")!)
-        let navFavorite = generateNav(vc: FavoriteViewController(), title: "Favorite Hero", image: UIImage(systemName: "suit.heart")!, selectedImage: UIImage(systemName: "suit.heart.fill")!)
+        let navRepo = generateNav(vc: MainViewController(), title: "Hero", image: UIImage(named: "courage2")!, selectedImage: UIImage(named: "courage3")!)
+        let navUser = generateNav(vc: SearchUserViewController(), title: "Player", image: UIImage(named: "athlete")!, selectedImage: UIImage(named: "athlete2")!)
+        let navItems = generateNav(vc: ItemsListViewController(), title: "Items", image: UIImage(named: "courage")!, selectedImage: UIImage(named: "courage4")!)
+        let navFavorite = generateNav(vc: FavoriteViewController(), title: "Favorite Hero", image: UIImage(named: "touch")!, selectedImage: UIImage(named: "touch2")!)
         viewControllers = [navRepo, navUser, navItems, navFavorite]
         
         let real = try! Realm()
