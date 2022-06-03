@@ -55,7 +55,6 @@
 		187EF19125F09AF5000370EE /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187EF18F25F09AF5000370EE /* FavoriteViewController.xib */; };
 		18C0587C25EDDF2B006518C1 /* TabbarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */; };
 		2D935664C9F27E9C7FFD6B69 /* Pods_SearchRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E219C96DBCD90B41A0DD0825 /* Pods_SearchRepositories.framework */; };
-		402FE3E8284914EE0061ADCA /* abc.json in Resources */ = {isa = PBXBuildFile; fileRef = 402FE3E7284914EE0061ADCA /* abc.json */; };
 		402FE3EB28491E4D0061ADCA /* HeroLoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FE3E928491E4D0061ADCA /* HeroLoreViewController.swift */; };
 		402FE3EC28491E4D0061ADCA /* HeroLoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402FE3EA28491E4D0061ADCA /* HeroLoreViewController.xib */; };
 		40FFAF192845267A006DCA61 /* hero_lore.json in Resources */ = {isa = PBXBuildFile; fileRef = 40FFAF182845267A006DCA61 /* hero_lore.json */; };
@@ -85,6 +84,7 @@
 		F026BFBA2846112100A12D52 /* Player.json in Resources */ = {isa = PBXBuildFile; fileRef = F026BFB92846112100A12D52 /* Player.json */; };
 		F026BFBD2846147400A12D52 /* ProPlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */; };
 		F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */; };
+		F0D2CCEE2849AD4A0026399B /* abc.json in Resources */ = {isa = PBXBuildFile; fileRef = F0D2CCED2849AD4A0026399B /* abc.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,7 +137,6 @@
 		187EF18E25F09AF5000370EE /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		187EF18F25F09AF5000370EE /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		18C0587B25EDDF2B006518C1 /* TabbarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerViewController.swift; sourceTree = "<group>"; };
-		402FE3E7284914EE0061ADCA /* abc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = abc.json; path = ../../../../Downloads/abc.json; sourceTree = "<group>"; };
 		402FE3E928491E4D0061ADCA /* HeroLoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLoreViewController.swift; sourceTree = "<group>"; };
 		402FE3EA28491E4D0061ADCA /* HeroLoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroLoreViewController.xib; sourceTree = "<group>"; };
 		40FFAF182845267A006DCA61 /* hero_lore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero_lore.json; sourceTree = "<group>"; };
@@ -167,6 +166,7 @@
 		F026BFB92846112100A12D52 /* Player.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Player.json; sourceTree = "<group>"; };
 		F026BFBB2846147400A12D52 /* ProPlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPlayerDetailViewController.swift; sourceTree = "<group>"; };
 		F026BFBC2846147400A12D52 /* ProPlayerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProPlayerDetailViewController.xib; sourceTree = "<group>"; };
+		F0D2CCED2849AD4A0026399B /* abc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abc.json; sourceTree = "<group>"; };
 		F3D45D9AEE2BC5CA717922AD /* Pods-SearchRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories.release.xcconfig"; path = "Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,7 +317,7 @@
 				186B75F725E3BAA700602FFD /* SearchRepositories_Mvvm.xcdatamodeld */,
 				40FFAF182845267A006DCA61 /* hero_lore.json */,
 				F026BFB92846112100A12D52 /* Player.json */,
-				402FE3E7284914EE0061ADCA /* abc.json */,
+				F0D2CCED2849AD4A0026399B /* abc.json */,
 			);
 			path = SearchRepositories;
 			sourceTree = "<group>";
@@ -610,7 +610,6 @@
 				929BC8D12845C785000FD5DF /* items.json in Resources */,
 				186B75F625E3BAA700602FFD /* Main.storyboard in Resources */,
 				18670C6E25EE4D88000F105B /* DetailUserViewController.xib in Resources */,
-				402FE3E8284914EE0061ADCA /* abc.json in Resources */,
 				402FE3EC28491E4D0061ADCA /* HeroLoreViewController.xib in Resources */,
 				F026BFBE2846147400A12D52 /* ProPlayerDetailViewController.xib in Resources */,
 				929BC9292846611D000FD5DF /* SplashViewController.xib in Resources */,
@@ -625,6 +624,7 @@
 				40FFAF192845267A006DCA61 /* hero_lore.json in Resources */,
 				928C8E9028466E1F00C186C5 /* GoogleService-Info.plist in Resources */,
 				186B764025E3C23600602FFD /* MainViewController.xib in Resources */,
+				F0D2CCEE2849AD4A0026399B /* abc.json in Resources */,
 				187E239E25E4A51F009A1B46 /* MainTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
